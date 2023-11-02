@@ -20,9 +20,9 @@ module.exports = {
 				light: {
 					colors: {
 						background: "#232529", 
-						foreground: "#E0BEA4", 
+						foreground: "#EBD5C4", 
 						primary: {
-							foreground: "#E0BEA4",
+							foreground: "#EBD5C4",
 							DEFAULT: "#3D1D93",
 						},          
 					},

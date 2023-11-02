@@ -1,15 +1,16 @@
+import {Link} from "react-router-dom";
 import {Button} from "@nextui-org/react";
 import {useState} from "react";
 import "./Landing.css";
-import logo from "./managemate-log-dark-mode.png";
-import logolight from "./managemate-logo-light-mode.png";
-import backgroundImg from "./behance-63adee33ddf03.jpg";
-import secondbg from "./behance-63adeeaeaafb1.jpg";
-import iMac from "./Black iMac Sales.png";
-import iPhoneX from "./iphone x mockup.png";
-import macbook from "./Macbook Sales Mockup.png";
-import logoletter from "./managemate-txt-dark.png";
-import graph from "./managemate-graph-test-3@1-1390x1080.png";
+import logo from "../../Images/managemate-log-dark-mode.png";
+import logolight from "../../Images/managemate-logo-light-mode.png";
+import backgroundImg from "../../Images/behance-63adee33ddf03.jpg";
+import secondbg from "../../Images/behance-63adeeaeaafb1.jpg";
+import iMac from "../../Images/Black iMac Sales.png";
+import iPhoneX from "../../Images/iphone x mockup.png";
+import macbook from "../../Images/Macbook Sales Mockup.png";
+import logoletter from "../../Images/managemate-txt-dark.png";
+import graph from "../../Images/managemate-graph-test-3@1-1390x1080.png";
 
 import {
 	Divider,
@@ -20,7 +21,6 @@ import {
 	NavbarMenuToggle,
 	NavbarMenu,
 	NavbarMenuItem,
-	Link,
 } from "@nextui-org/react";
 
 const Landing = () => {
@@ -38,7 +38,7 @@ const Landing = () => {
 				position="static"
 				className="sm:bg-[#EBD5C4]"
 				maxWidth="2xl">
-				<NavbarBrand className="hidden sm:flex ">
+				<NavbarBrand className="hidden sm:flex " >
 					<img src={logolight} alt="" className="w-[90px] h-auto mr-[-40px]" />
 					<img src={logoletter} alt="" className="w-[180px] h-auto " />
 				</NavbarBrand>
@@ -54,31 +54,30 @@ const Landing = () => {
 						Contact
 					</NavbarItem>
 					<NavbarItem className="hidden sm:flex font-[Satoshi-Bold] text-[#232529] ">
-						Login
+						<Link to="/login">Login</Link>
 					</NavbarItem>
 					<NavbarItem className="hidden sm:flex font-[Satoshi-Bold] text-[#232529]">
-						Sign Up
+						<Link to="/register">Sign Up</Link>
 					</NavbarItem>
 				</NavbarContent>
-				<NavbarMenu>
-					{menuItems.map((item, index) => (
-						<NavbarMenuItem key={`${item}-${index}`}>
-							<Link
-								color="foreground"
-								className="w-full font-[Satoshi-Bold]"
-								href="#"
-								size="lg">
-								{item}
-							</Link>
-						</NavbarMenuItem>
-					))}
+				<NavbarMenu >
+					<Link className="w-full font-[Satoshi-Bold]" to="">
+						Contact
+					</Link>
+					<Link className="w-full font-[Satoshi-Bold]" to="/login">
+						Login
+					</Link>
+					<Link className="w-full font-[Satoshi-Bold]" to="/register">
+						Register
+					</Link>
 				</NavbarMenu>
-				<NavbarBrand className="sm:hidden">
-					<img src={logo} alt="" />
+				<NavbarBrand className="sm:hidden" >
+					<img src={logo} alt="" loading="lazy"/>
 				</NavbarBrand>
 			</Navbar>
 			<div className="relative w-full h-[100vh] flex justify-center md:flex md:justify-center md:items-center">
 				<img
+					loading="lazy"
 					src={backgroundImg}
 					alt=""
 					className="bg-cover bg-center opacity-80 absolute transform w-full h-full mix-blend-multiply"
@@ -98,7 +97,7 @@ const Landing = () => {
 					</div>
 				</div>
 				<div className="hidden md:flex md:h-auto md:w-[46%] 2xl:w-[40%]  relative">
-					<img src={graph} alt="" className="w-full h-auto" />
+					<img src={graph} alt="" className="w-full h-auto" loading="lazy"/>
 				</div>
 			</div>
 			<div className="h-auto w-full flex justify-center bg-gradient-to-br from-[#F5E9E1] to-[#EBD5C4]">
@@ -149,6 +148,7 @@ const Landing = () => {
 					</div>
 					<div className="circular-gradient rounded-full h-64 w-64 md:w-[450px] md:h-[450px] flex justify-center items-center">
 						<img
+							loading="lazy"
 							src={iMac}
 							alt=""
 							className="w-[100vw] sm:w-[60vw] md:w-[50%] 2xl:w-[35%] h-auto absolute"
@@ -158,6 +158,7 @@ const Landing = () => {
 			</div>
 			<div className="h-[300vh] w-full flex justify-center flex-col items-center relative ">
 				<img
+					loading="lazy"
 					src={secondbg}
 					alt=""
 					className="bg-cover bg-center opacity-50 absolute  w-[150vw] h-full mix-blend-multiply"
@@ -287,8 +288,7 @@ const Landing = () => {
 									className="hidden md:flex fill-[#C8D9FF]">
 									<path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
 								</svg>
-								<p
-									className="text-[Questrial] text-[12px] text-white w-[10ch] md:w-[20ch] md:text-lg lg:text-xl  2xl:text-2xl text-center md:text-left">
+								<p className="text-[Questrial] text-[12px] text-white w-[10ch] md:w-[20ch] md:text-lg lg:text-xl  2xl:text-2xl text-center md:text-left">
 									Manage your statistics by month.
 								</p>
 							</div>
