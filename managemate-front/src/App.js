@@ -23,17 +23,17 @@ function App() {
 				<Route path="/login" Component={Login} />
 				<Route path="/register" Component={Register} />
 				<Route path="/manager" Component={StoresManager} />
-				<Route path="/dashboard/home" Component={Home} />
-				<Route path="/dashboard/statistics" Component={Statistics} />
-				<Route path="/dashboard/clients" Component={Clients} />
-				<Route path="/dashboard/orders" Component={Orders} />
-				<Route path="/dashboard/inventory" Component={Inventory} />
-				<Route path="/dashboard/client-creation" Component={ClientCreation} />
-				<Route path="/dashboard/order-creation" Component={OrderCreation} />
-				<Route path="/manager/store-configurator" Component={StoreConfigurator} />
-				<Route path="/manager/account" Component={AccountSettings} />
-				<Route path="/dashboard/inventory/cathegory" Component={CathegoryDetail} />
-				<Route path="/dashboard/clients/bought-twice" Component={BoughtTwice} />
+				<Route path="/dashboard/home/:id" Component={Home} />
+				<Route path="/dashboard/statistics/:id" Component={Statistics} />
+				<Route path="/dashboard/clients/:id" Component={Clients} />
+				<Route path="/dashboard/orders/:id" Component={Orders} />
+				<Route path="/dashboard/inventory/:id" Component={Inventory} />
+				<Route path="/dashboard/client-creation/:id" Component={ClientCreation} />
+				<Route path="/dashboard/order-creation/:id" Component={OrderCreation} />
+				<Route path="/manager/store-configurator/:id" Component={StoreConfigurator} />
+				<Route path="/manager/account/:id" Component={AccountSettings} />
+				<Route path="/dashboard/inventory/cathegory/:categoryId/:id" Component={CathegoryDetail} />
+				<Route path="/dashboard/clients/bought-twice/:id" Component={BoughtTwice} />
 			</Routes>
 		</div>
 	);
