@@ -38,7 +38,7 @@ const Landing = () => {
 				position="static"
 				className="sm:bg-[#EBD5C4]"
 				maxWidth="2xl">
-				<NavbarBrand className="hidden sm:flex " >
+				<NavbarBrand className="hidden sm:flex ">
 					<img src={logolight} alt="" className="w-[90px] h-auto mr-[-40px]" />
 					<img src={logoletter} alt="" className="w-[180px] h-auto " />
 				</NavbarBrand>
@@ -50,9 +50,7 @@ const Landing = () => {
 				</NavbarContent>
 
 				<NavbarContent justify="end" color="foreground">
-					<NavbarItem className="hidden sm:flex font-[Satoshi-Bold] text-[#232529]">
-						Contact
-					</NavbarItem>
+					
 					<NavbarItem className="hidden sm:flex font-[Satoshi-Bold] text-[#232529] ">
 						<Link to="/login">Login</Link>
 					</NavbarItem>
@@ -60,10 +58,8 @@ const Landing = () => {
 						<Link to="/register">Sign Up</Link>
 					</NavbarItem>
 				</NavbarContent>
-				<NavbarMenu >
-					<Link className="w-full font-[Satoshi-Bold]" to="">
-						Contact
-					</Link>
+				<NavbarMenu>
+					
 					<Link className="w-full font-[Satoshi-Bold]" to="/login">
 						Login
 					</Link>
@@ -71,14 +67,14 @@ const Landing = () => {
 						Register
 					</Link>
 				</NavbarMenu>
-				<NavbarBrand className="sm:hidden" >
-					<img src={logo} alt="" loading="lazy"/>
+				<NavbarBrand className="sm:hidden">
+					<img src={logo} alt="" loading="lazy" />
 				</NavbarBrand>
 			</Navbar>
 			<div className="relative w-full h-[100vh] flex justify-center md:flex md:justify-center md:items-center">
 				<img
 					loading="lazy"
-					src={backgroundImg}
+					src="https://res.cloudinary.com/dxyosebut/image/upload/v1704063679/LANDING/behance-63adee33ddf03_g5ett9.jpg"
 					alt=""
 					className="bg-cover bg-center opacity-80 absolute transform w-full h-full mix-blend-multiply"
 				/>
@@ -89,15 +85,22 @@ const Landing = () => {
 						customers
 					</h1>
 					<div className="w-auto flex justify-center ">
-						<Button
-							className="bg-[#9477E4] w-22 font-[Satoshi-Bold] 2xl:w-36 2xl:h-12"
-							radius="sm">
-							START NOW
-						</Button>
+						<Link to="/register">
+							<Button
+								className="bg-[#9477E4] w-22 font-[Satoshi-Bold] 2xl:w-36 2xl:h-12"
+								radius="sm">
+								START NOW
+							</Button>
+						</Link>
 					</div>
 				</div>
 				<div className="hidden md:flex md:h-auto md:w-[46%] 2xl:w-[40%]  relative">
-					<img src={graph} alt="" className="w-full h-auto" loading="lazy"/>
+					<img
+						src="https://res.cloudinary.com/dxyosebut/image/upload/v1704063981/LANDING/managemate-graph-test-3_1-1390x1080_jccv6y.png"
+						alt=""
+						className="w-full h-auto"
+						loading="lazy"
+					/>
 				</div>
 			</div>
 			<div className="h-auto w-full flex justify-center bg-gradient-to-br from-[#F5E9E1] to-[#EBD5C4]">
@@ -149,7 +152,7 @@ const Landing = () => {
 					<div className="circular-gradient rounded-full h-64 w-64 md:w-[450px] md:h-[450px] flex justify-center items-center">
 						<img
 							loading="lazy"
-							src={iMac}
+							src="https://res.cloudinary.com/dxyosebut/image/upload/v1704064083/LANDING/Black_iMac_Sales_ir5g62.png"
 							alt=""
 							className="w-[100vw] sm:w-[60vw] md:w-[50%] 2xl:w-[35%] h-auto absolute"
 						/>
@@ -159,7 +162,7 @@ const Landing = () => {
 			<div className="h-[300vh] w-full flex justify-center flex-col items-center relative ">
 				<img
 					loading="lazy"
-					src={secondbg}
+					src="https://res.cloudinary.com/dxyosebut/image/upload/v1704064115/LANDING/behance-63adeeaeaafb1_c2lytz.jpg"
 					alt=""
 					className="bg-cover bg-center opacity-50 absolute  w-[150vw] h-full mix-blend-multiply"
 				/>
@@ -225,7 +228,7 @@ const Landing = () => {
 						</div>
 					</div>
 					<img
-						src={iPhoneX}
+						src="https://res.cloudinary.com/dxyosebut/image/upload/v1704064495/LANDING/iphone_x_mockup_o6kvxe.png"
 						alt=""
 						className="h-auto w-full sm:w-[50%] md:w-[40%] lg:w-[30%] bg-cover bg-center relative  "
 					/>
@@ -238,7 +241,7 @@ const Landing = () => {
 
 					<div className="h-full flex flex-col justify-center items-center md:flex-row gap-8 ">
 						<img
-							src={macbook}
+							src="https://res.cloudinary.com/dxyosebut/image/upload/v1704064499/LANDING/Macbook_Sales_Mockup_rckv7d.png"
 							alt=""
 							className="h-auto w-full sm:w-[50%] md:w-[45%] bg-cover bg-center "
 						/>
@@ -302,17 +305,19 @@ const Landing = () => {
 						Create a free account and start managing your business
 						<span className="text-[#C8D9FF]">NOW</span>
 					</h2>
-					<Button className="w-36 md:w-44 md:h-12 md:text-lg bg-[#C8D9FF] text-[#3D1D93] font-[Satoshi]">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							height="46"
-							viewBox="0 -960 960 960"
-							width="24"
-							className="fill-[#3D1D93] w-[46px] h-auto">
-							<path d="M120-120v-80l80-80v160h-80Zm160 0v-240l80-80v320h-80Zm160 0v-320l80 81v239h-80Zm160 0v-239l80-80v319h-80Zm160 0v-400l80-80v480h-80ZM120-327v-113l280-280 160 160 280-280v113L560-447 400-607 120-327Z" />
-						</svg>
-						Level Up
-					</Button>
+					<Link to="/register">
+						<Button className="w-36 md:w-44 md:h-12 md:text-lg bg-[#C8D9FF] text-[#3D1D93] font-[Satoshi-Bold]">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								height="46"
+								viewBox="0 -960 960 960"
+								width="24"
+								className="fill-[#3D1D93] w-[46px] h-auto">
+								<path d="M120-120v-80l80-80v160h-80Zm160 0v-240l80-80v320h-80Zm160 0v-320l80 81v239h-80Zm160 0v-239l80-80v319h-80Zm160 0v-400l80-80v480h-80ZM120-327v-113l280-280 160 160 280-280v113L560-447 400-607 120-327Z" />
+							</svg>
+							Level Up
+						</Button>
+					</Link>
 				</div>
 			</div>
 		</div>

@@ -65,6 +65,36 @@ const BoughtTwice = () => {
 
 	// ---------------------------
 
+	// ----------------------
+
+	// FILTER CLIENTS BY ORIGIN
+	const [clientsCopy, setClientsCopy] = useState([]);
+	const [filterError, setFilterError] = useState(false);
+
+	const filterByOrigin = (param) => {
+		const clients = [...clientsCopy];
+		if (param !== "All") {
+			const filterResult = clients.filter(
+				(client) => client.origin === param
+				);
+				console.log(filterResult);
+
+			if (filterResult.length === 0) {
+				setFilterError(true);
+				setTimeout(() => {
+					setFilterError(false);
+					setCustomers(clientsCopy);
+				}, 3000);
+			} else {
+				setCustomers(filterResult);
+			}
+		} else {
+			setCustomers(clientsCopy);
+		}
+	};
+
+	// -------------------
+
 	// CUSTOMERS
 
 	const getCustomers = async () => {
@@ -75,6 +105,7 @@ const BoughtTwice = () => {
 			const result = response.data;
 
 			setCustomers(result);
+			setClientsCopy(result);
 		} catch (error) {
 			setCustomersError(true);
 		}
@@ -176,8 +207,6 @@ const BoughtTwice = () => {
 		}
 	};
 
-	console.log(searchResultError);
-
 	const enterSearch = (event) => {
 		if (searchData.length === 0) return;
 		if (event.key === "Enter") searchCustomers();
@@ -187,7 +216,6 @@ const BoughtTwice = () => {
 		setSearchResult([]);
 		setSearchData("");
 	};
-	// ----------------------
 
 	useEffect(() => {
 		const loggedUser = localStorage.getItem("loggedUser");
@@ -401,9 +429,12 @@ const BoughtTwice = () => {
 					See the detail of the customers that bought twice or more from you,
 					search specific customers and filter by customer origin
 				</p>
-				<div className="w-[250px] md:w-[680px] lg:w-[1000px] gap-8 h-auto flex flex-col justify-between items-start md:flex-row mt-6 xl:mt-12 ">
+				<div className="w-[250px] md:w-[680px] lg:w-[1000px] gap-8 h-auto flex flex-col justify-between items-center md:items-start md:flex-row mt-6 xl:mt-12 ">
 					<div className="flex flex-col md:flex-row justify-center items-center gap-3">
-						<Dropdown>
+						<Dropdown
+							classNames={{
+								base: "bg-[#3D1D93] text-white font-[Satoshi]",
+							}}>
 							<DropdownTrigger>
 								<Button
 									radius="sm"
@@ -418,11 +449,21 @@ const BoughtTwice = () => {
 								<DropdownItem key="Filter by origin">
 									Filter by origin
 								</DropdownItem>
-								<DropdownItem key="Whatsapp">Whatsapp</DropdownItem>
-								<DropdownItem key="Instagram">Instagram</DropdownItem>
-								<DropdownItem key="Facebook">Facebook</DropdownItem>
+								<DropdownItem onClick={()=>filterByOrigin("All")} key="All">
+									All
+								</DropdownItem>
+								<DropdownItem onClick={()=>filterByOrigin("Whatsapp")} key="Whatsapp">
+									Whatsapp
+								</DropdownItem>
+								<DropdownItem onClick={()=>filterByOrigin("Instagram")} key="Instagram">
+									Instagram
+								</DropdownItem>
+								<DropdownItem onClick={()=>filterByOrigin("Facebook")} key="Facebook">
+									Facebook
+								</DropdownItem>
 							</DropdownMenu>
 						</Dropdown>
+						{filterError && <span className="font-[Satoshi] text-red-600">No results</span>}
 					</div>
 					<div className="w-full md:w-1/2 ">
 						<Input
