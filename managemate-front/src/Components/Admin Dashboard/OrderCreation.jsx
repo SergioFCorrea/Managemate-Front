@@ -287,13 +287,13 @@ const OrderCreation = () => {
 											input: [
 												"bg-white",
 												"text-[#232529] dark:text-white/90",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"placeholder:text-[#3d1d93] dark:placeholder:text-white/60",
 											],
 											inputWrapper: [
 												"data-[hover=true]:border-[#EBD5C4]",
 												"border-none",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"bg-white",
 												"!cursor-text",
 												"h-11",
@@ -352,7 +352,7 @@ const OrderCreation = () => {
 									)}
 									{/* </div> */}
 									{searchResult.length === 0 && (
-										<span className="h-[80%] flex items-center justify-center font-[Satoshi] text-medium md:text-lg text-[#232529] text-center">
+										<span className="h-[80%] flex items-center justify-center font-[Satoshi-Medium] text-medium md:text-lg text-[#232529] text-center">
 											Search for a client to assign this order to
 										</span>
 									)}
@@ -375,13 +375,13 @@ const OrderCreation = () => {
 													input: [
 														"bg-white",
 														"text-[#232529] dark:text-white/90",
-														"font-[Satoshi]",
+														"font-[Satoshi-Medium]",
 														"placeholder:text-[#3d1d93] dark:placeholder:text-white/60",
 													],
 													inputWrapper: [
 														"data-[hover=true]:border-[#EBD5C4]",
 														"border-none",
-														"font-[Satoshi]",
+														"font-[Satoshi-Medium]",
 														"bg-white",
 														"!cursor-text",
 														"h-11",
@@ -428,13 +428,13 @@ const OrderCreation = () => {
 											input: [
 												"bg-white",
 												"text-[#232529] dark:text-white/90",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"placeholder:text-[#3d1d93] dark:placeholder:text-white/60",
 											],
 											inputWrapper: [
 												"data-[hover=true]:border-[#EBD5C4]",
 												"border-none",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"bg-white",
 												"!cursor-text",
 												"h-11",
@@ -471,7 +471,7 @@ const OrderCreation = () => {
 																		)
 																	}
 																	name="quantity"
-																	className="font-[Satoshi] w-8 h-6 rounded-md text-center"
+																	className="font-[Satoshi-Medium] w-8 h-6 rounded-md text-center"
 																	defaultValue={1}
 																	radius="full"
 																	type="number"
@@ -514,7 +514,7 @@ const OrderCreation = () => {
 											})
 										)}
 										{!loading && productsResult.length === 0 && (
-											<span className="h-[80%] flex items-center justify-center font-[Satoshi] text-medium md:text-lg text-[#232529] text-center">
+											<span className="h-[80%] flex items-center justify-center font-[Satoshi-Medium] text-medium md:text-lg text-[#232529] text-center">
 												Search for a product
 											</span>
 										)}
@@ -575,7 +575,7 @@ const OrderCreation = () => {
 										onChange={handleChange}
 										classNames={{
 											label: "text-white",
-											base: "text-[#232529] font-[Satoshi] ",
+											base: "text-[#232529] font-[Satoshi-Medium] ",
 											inputWrapper:
 												"bg-[#C8D9FF] backdrop-blur-[8px] bg-opacity-30",
 										}}
@@ -689,12 +689,12 @@ const OrderCreation = () => {
 					</Button>
 				</div>
 				{createSuccess && (
-					<span className="mt-[-10px] font-[Satoshi] text-medium text-center text-green-500">
+					<span className="mt-[-10px] font-[Satoshi-Medium] text-medium text-center text-green-500">
 						Order created successfully!
 					</span>
 				)}
 				{createError && (
-					<span className="mt-[-10px] font-[Satoshi] text-medium text-center text-red-500">
+					<span className="mt-[-10px] font-[Satoshi-Medium] text-medium text-center text-red-500">
 						An error occurred when creating the order, please try again
 					</span>
 				)}

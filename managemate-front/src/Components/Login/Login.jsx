@@ -83,12 +83,12 @@ const Login = () => {
 							input: [
 								"bg-[#EBD5C4]",
 								"text-[#232529] dark:text-white/90",
-								"font-[Satoshi]",
+								"font-[Satoshi-Medium]",
 								"placeholder:text-default-700/50 dark:placeholder:text-white/60",
 							],
 							innerWrapper: "bg-green-500",
 							inputWrapper: [
-								"font-[Satoshi]",
+								"font-[Satoshi-Medium]",
 								"bg-[#EBD5C4]",
 								"!cursor-text",
 								"h-12",
@@ -109,12 +109,12 @@ const Login = () => {
 							input: [
 								"bg-[#EBD5C4]",
 								"text-[#232529] dark:text-white/90",
-								"font-[Satoshi]",
+								"font-[Satoshi-Medium]",
 								"placeholder:text-default-700/50 dark:placeholder:text-white/60",
 							],
 							innerWrapper: "bg-green-500",
 							inputWrapper: [
-								"font-[Satoshi]",
+								"font-[Satoshi-Medium]",
 								"bg-[#EBD5C4]",
 								"!cursor-text",
 								"h-12",
@@ -128,7 +128,7 @@ const Login = () => {
 						Login
 					</Button>
 					{loginError && (
-						<span className="text-red-500 font-[Satoshi] text-medium">
+						<span className="text-red-500 font-[Satoshi-Medium] text-medium">
 							{loginError}
 						</span>
 					)}

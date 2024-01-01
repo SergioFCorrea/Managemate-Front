@@ -69,7 +69,7 @@ function ProductDetail({productId}) {
 								title: "text-white text-medium",
 								content: "h-26 w-42",
 							}}
-							className="bg-[#3d1d93] font-[Satoshi] text-sm text-white w-full"
+							className="bg-[#3d1d93] font-[Satoshi-Medium] text-sm text-white w-full"
 							aria-label="New cathegory"
 							indicator={
 								<svg
@@ -88,11 +88,11 @@ function ProductDetail({productId}) {
 								<div className="flex flex-col justify-center items-center gap-2 mt-5">
 									<Button
 										onClick={deleteProduct}
-										className="bg-green-500 font-[Satoshi] text-sm text-white w-7 h-6">
+										className="bg-green-500 font-[Satoshi-Medium] text-sm text-white w-7 h-6">
 										Yes
 									</Button>
 									{deleteError && (
-										<span className="font-[Satoshi] text-red-500 text-sm text-center">
+										<span className="font-[Satoshi-Medium] text-red-500 text-sm text-center">
 											An error occurred
 										</span>
 									)}
@@ -175,7 +175,7 @@ function ProductDetail({productId}) {
 					</div>
 				</div>
 			) : (
-				<span className="font-[Satoshi] text-center text-green-500 text-lg w-[200px] h-[100px] flex justify-center items-center">
+				<span className="font-[Satoshi-Medium] text-center text-green-500 text-lg w-[200px] h-[100px] flex justify-center items-center">
 					Product deleted
 				</span>
 			)}

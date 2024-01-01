@@ -120,12 +120,12 @@ const Register = () => {
 								errors.email
 									? "text-white"
 									: "text-[#232529] dark:text-white/90",
-								"font-[Satoshi]",
+								"font-[Satoshi-Medium]",
 								"placeholder:text-default-700/50 dark:placeholder:text-white/60",
 							],
 							innerWrapper: "bg-green-500",
 							inputWrapper: [
-								"font-[Satoshi]",
+								"font-[Satoshi-Medium]",
 								errors.email ? "bg-none" : "bg-[#EBD5C4]",
 								"!cursor-text",
 								"h-12",
@@ -151,12 +151,12 @@ const Register = () => {
 								errors.confirmPassword
 									? "text-white"
 									: "text-[#232529] dark:text-white/90",
-								"font-[Satoshi]",
+								"font-[Satoshi-Medium]",
 								"placeholder:text-default-700/50 dark:placeholder:text-white/60",
 							],
 							innerWrapper: "bg-green-500",
 							inputWrapper: [
-								"font-[Satoshi]",
+								"font-[Satoshi-Medium]",
 								errors.confirmPassword ? "bg-none" : "bg-[#EBD5C4]",
 								"!cursor-text",
 								"h-12",
@@ -182,12 +182,12 @@ const Register = () => {
 								errors.confirmPassword
 									? "text-white"
 									: "text-[#232529] dark:text-white/90",
-								"font-[Satoshi]",
+								"font-[Satoshi-Medium]",
 								"placeholder:text-default-700/50 dark:placeholder:text-white/60",
 							],
 							innerWrapper: "bg-green-500",
 							inputWrapper: [
-								"font-[Satoshi]",
+								"font-[Satoshi-Medium]",
 								errors.confirmPassword ? "bg-none" : "bg-[#EBD5C4]",
 								"!cursor-text",
 								"h-12",
@@ -210,7 +210,7 @@ const Register = () => {
 						)}
 					</div>
 					<label
-						className="text-sm text-[#EBD5C4] font-[Satoshi] text-left"
+						className="text-sm text-[#EBD5C4] font-[Satoshi-Medium] text-left"
 						htmlFor="image">
 						{!selectedImage ? "Upload your user image" : "The image you chose"}
 					</label>

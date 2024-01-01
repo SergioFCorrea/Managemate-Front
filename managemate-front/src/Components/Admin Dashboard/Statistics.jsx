@@ -365,7 +365,7 @@ const Statistics = () => {
 				<NavbarContent as="div" justify="end">
 					<Dropdown
 						placement="bottom-end"
-						className="bg-[#3D1D93] text-white shadow-[4px_4px_12px_2px_rgba(0,0,0,0.8)] font-[Satoshi]">
+						className="bg-[#3D1D93] text-white shadow-[4px_4px_12px_2px_rgba(0,0,0,0.8)] font-[Satoshi-Medium]">
 						<DropdownTrigger>
 							<Avatar
 								as="button"
@@ -428,7 +428,7 @@ const Statistics = () => {
 										Sales in the last 3 months
 									</p>
 									{salesError ? (
-										<span className="h-1/2 font-[Satoshi] text-white text-medium text-center">
+										<span className="h-1/2 font-[Satoshi-Medium] text-white text-medium text-center">
 											No completed orders
 										</span>
 									) : (
@@ -466,7 +466,7 @@ const Statistics = () => {
 										Profit in the last 4 months
 									</p>
 									{profitMonthError ? (
-										<span className="h-1/2 font-[Satoshi] text-white text-medium text-center">
+										<span className="h-1/2 font-[Satoshi-Medium] text-white text-medium text-center">
 											No completed orders
 										</span>
 									) : (
@@ -503,7 +503,7 @@ const Statistics = () => {
 							<Dropdown
 								aria-label="Button"
 								classNames={{
-									base: "bg-[#3D1D93] text-white font-[Satoshi]",
+									base: "bg-[#3D1D93] text-white font-[Satoshi-Medium]",
 								}}>
 								<DropdownTrigger aria-label="Menu">
 									<Button
@@ -655,8 +655,8 @@ const Statistics = () => {
 										</p>
 										{mostPurchError || customerMostPurch === null ? (
 											<>
-												<Avatar className="w-28 h-28 font-[Satoshi] text-xl text-white bg-gray-700" />
-												<span className="h-auto font-[Satoshi] text-white text-medium text-center">
+												<Avatar className="w-28 h-28 font-[Satoshi-Medium] text-xl text-white bg-gray-700" />
+												<span className="h-auto font-[Satoshi-Medium] text-white text-medium text-center">
 													No data
 												</span>
 											</>
@@ -665,7 +665,7 @@ const Statistics = () => {
 												<img
 													src={customerMostPurch?.img}
 													alt={
-														<Avatar className="w-28 h-28 font-[Satoshi] text-xl text-white bg-gray-700" />
+														<Avatar className="w-28 h-28 font-[Satoshi-Medium] text-xl text-white bg-gray-700" />
 													}
 													className="w-36 h-36 object-cover rounded-lg shadow-[0_0_18px_0_rgba(0,0,0,0.8)]"
 												/>

@@ -302,7 +302,7 @@ const AccountSettings = () => {
 				<NavbarContent as="div" justify="end">
 					<Dropdown
 						placement="bottom-end"
-						className="bg-[#3D1D93] text-white shadow-[4px_4px_12px_2px_rgba(0,0,0,0.8)] font-[Satoshi]">
+						className="bg-[#3D1D93] text-white shadow-[4px_4px_12px_2px_rgba(0,0,0,0.8)] font-[Satoshi-Medium]">
 						<DropdownTrigger>
 							<Avatar
 								as="button"
@@ -388,13 +388,13 @@ const AccountSettings = () => {
 									input: [
 										"bg-[#1C1E21]",
 										"text-[#4B5058]",
-										"font-[Satoshi]",
+										"font-[Satoshi-Medium]",
 										"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 									],
 									inputWrapper: [
 										"data-[readonly=false]-bg-red-400",
 										"inner-shadow-input",
-										"font-[Satoshi]",
+										"font-[Satoshi-Medium]",
 										"border-none",
 										"bg-[#1C1E21]",
 										"!cursor-text",
@@ -439,13 +439,13 @@ const AccountSettings = () => {
 												input: [
 													"bg-[#1C1E21]",
 													"text-white",
-													"font-[Satoshi]",
+													"font-[Satoshi-Medium]",
 													"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 												],
 												inputWrapper: [
 													"data-[readonly=false]-bg-red-400",
 													"inner-shadow-input",
-													"font-[Satoshi]",
+													"font-[Satoshi-Medium]",
 													"border-none",
 													"bg-[#1C1E21]",
 													"!cursor-text",
@@ -462,16 +462,16 @@ const AccountSettings = () => {
 													? true
 													: false
 											}
-											className="bg-[#c8d9ff] font-[Satoshi] text-[#232529]">
+											className="bg-[#c8d9ff] font-[Satoshi-Medium] text-[#232529]">
 											Confirm
 										</Button>
 										{updateEmailSuccess && (
-											<span className="font-[Satoshi] text-green-500 text-medium text-center">
+											<span className="font-[Satoshi-Medium] text-green-500 text-medium text-center">
 												Updated!
 											</span>
 										)}
 										{updateEmailError.length > 0 && (
-											<span className="font-[Satoshi] text-red-500 text-medium text-center">
+											<span className="font-[Satoshi-Medium] text-red-500 text-medium text-center">
 												{updateEmailError}
 											</span>
 										)}
@@ -479,7 +479,7 @@ const AccountSettings = () => {
 								</Badge>
 							)}
 							<button onClick={enableEdit}>
-								<p className="text-white text-left text-[10px] font-[Satoshi] ml-2">
+								<p className="text-white text-left text-[10px] font-[Satoshi-Medium] ml-2">
 									Change E-mail
 								</p>
 							</button>
@@ -496,7 +496,7 @@ const AccountSettings = () => {
 									input: [
 										"bg-[#1C1E21]",
 										"text-[#4B5058] dark:text-white/90",
-										"font-[Satoshi]",
+										"font-[Satoshi-Medium]",
 										"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 									],
 									inputWrapper: [
@@ -504,7 +504,7 @@ const AccountSettings = () => {
 										"data-[hover=true]:border-[#EBD5C4]",
 										"border-none",
 										"inner-shadow-input",
-										"font-[Satoshi]",
+										"font-[Satoshi-Medium]",
 										"bg-[#1C1E21]",
 										"!cursor-text",
 										"h-12",
@@ -563,7 +563,7 @@ const AccountSettings = () => {
 												input: [
 													"bg-[#1C1E21]",
 													"text-white",
-													"font-[Satoshi]",
+													"font-[Satoshi-Medium]",
 													"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 												],
 												inputWrapper: [
@@ -571,7 +571,7 @@ const AccountSettings = () => {
 													"data-[hover=true]:border-[#EBD5C4]",
 													"border-none",
 													"inner-shadow-input",
-													"font-[Satoshi]",
+													"font-[Satoshi-Medium]",
 													"bg-[#1C1E21]",
 													"!cursor-text",
 													"h-12",
@@ -618,7 +618,7 @@ const AccountSettings = () => {
 												input: [
 													"bg-[#1C1E21]",
 													"text-white",
-													"font-[Satoshi]",
+													"font-[Satoshi-Medium]",
 													"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 												],
 												inputWrapper: [
@@ -626,7 +626,7 @@ const AccountSettings = () => {
 													"data-[hover=true]:border-[#EBD5C4]",
 													"border-none",
 													"inner-shadow-input",
-													"font-[Satoshi]",
+													"font-[Satoshi-Medium]",
 													"bg-[#1C1E21]",
 													"!cursor-text",
 													"h-12",
@@ -673,7 +673,7 @@ const AccountSettings = () => {
 												input: [
 													"bg-[#1C1E21]",
 													"text-white",
-													"font-[Satoshi]",
+													"font-[Satoshi-Medium]",
 													"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 												],
 												inputWrapper: [
@@ -681,7 +681,7 @@ const AccountSettings = () => {
 													"data-[hover=true]:border-[#EBD5C4]",
 													"border-none",
 													"inner-shadow-input",
-													"font-[Satoshi]",
+													"font-[Satoshi-Medium]",
 													"bg-[#1C1E21]",
 													"!cursor-text",
 													"h-12",
@@ -724,16 +724,16 @@ const AccountSettings = () => {
 													? true
 													: false
 											}
-											className="bg-[#3d1d93] text-white font-[Satoshi]">
+											className="bg-[#3d1d93] text-white font-[Satoshi-Medium]">
 											Confirm
 										</Button>
 										{passwordUpdateSuccess && (
-											<span className="font-[Satoshi] text-green-500 text-medium text-center">
+											<span className="font-[Satoshi-Medium] text-green-500 text-medium text-center">
 												Updated!
 											</span>
 										)}
 										{passwordUpdateError && (
-											<span className="font-[Satoshi] text-red-500 text-medium text-center">
+											<span className="font-[Satoshi-Medium] text-red-500 text-medium text-center">
 												Current password is not correct
 											</span>
 										)}

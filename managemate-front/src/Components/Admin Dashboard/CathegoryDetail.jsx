@@ -436,7 +436,7 @@ const CathegoryDetail = () => {
 				<NavbarContent as="div" justify="end">
 					<Dropdown
 						placement="bottom-end"
-						className="bg-[#3D1D93] text-white shadow-[4px_4px_12px_2px_rgba(0,0,0,0.8)] font-[Satoshi]">
+						className="bg-[#3D1D93] text-white shadow-[4px_4px_12px_2px_rgba(0,0,0,0.8)] font-[Satoshi-Medium]">
 						<DropdownTrigger>
 							<Avatar
 								as="button"
@@ -536,14 +536,14 @@ const CathegoryDetail = () => {
 											input: [
 												"bg-[#1C1E21]",
 												"text-white dark:text-white/90",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 											],
 											inputWrapper: [
 												"data-[hover=true]:border-[#EBD5C4]",
 												"border-none",
 												"inner-shadow-input",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"bg-[#1C1E21]",
 												"!cursor-text",
 												"h-11",
@@ -561,14 +561,14 @@ const CathegoryDetail = () => {
 											input: [
 												"bg-[#1C1E21]",
 												"text-white dark:text-white/90",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 											],
 											inputWrapper: [
 												"data-[hover=true]:border-[#EBD5C4]",
 												"border-none",
 												"inner-shadow-input",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"bg-[#1C1E21]",
 												"!cursor-text",
 												"h-11",
@@ -587,16 +587,16 @@ const CathegoryDetail = () => {
 												? true
 												: false
 										}
-										className="bg-[#3d1d93] text-white font-[Satoshi]">
+										className="bg-[#3d1d93] text-white font-[Satoshi-Medium]">
 										Update
 									</Button>
 									{editCategorySuccess && (
-										<span className="font-[Satoshi] text-green-500 text-medium text-center">
+										<span className="font-[Satoshi-Medium] text-green-500 text-medium text-center">
 											Updated!
 										</span>
 									)}
 									{editCategoryError && (
-										<span className="font-[Satoshi] text-red-500 text-medium text-center">
+										<span className="font-[Satoshi-Medium] text-red-500 text-medium text-center">
 											Error, try again
 										</span>
 									)}
@@ -612,7 +612,7 @@ const CathegoryDetail = () => {
 							<Button
 								onClick={onOpen}
 								radius="sm"
-								className="bg-[#3d1d93] font-[Satoshi] text-medium text-white w-auto">
+								className="bg-[#3d1d93] font-[Satoshi-Medium] text-medium text-white w-auto">
 								New product
 								<svg
 									className="fill-white"
@@ -642,13 +642,13 @@ const CathegoryDetail = () => {
 								radius="sm"
 								className={
 									remove
-										? `bg-red-500 font-[Satoshi] text-medium text-white w-auto`
-										: `bg-[#3d1d93] font-[Satoshi] text-medium text-white w-auto`
+										? `bg-red-500 font-[Satoshi-Medium] text-medium text-white w-auto`
+										: `bg-[#3d1d93] font-[Satoshi-Medium] text-medium text-white w-auto`
 								}>
 								Remove products
 							</Button>
 							{remove && (
-								<span className="font-[Satoshi] text-red-500 text-[10px] md:w-[14ch]">
+								<span className="font-[Satoshi-Medium] text-red-500 text-[10px] md:w-[14ch]">
 									Product will be deleted forever
 								</span>
 							)}
@@ -682,14 +682,14 @@ const CathegoryDetail = () => {
 									input: [
 										"bg-[#1C1E21]",
 										"text-white dark:text-white/90",
-										"font-[Satoshi]",
+										"font-[Satoshi-Medium]",
 										"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 									],
 									inputWrapper: [
 										"data-[hover=true]:border-[#EBD5C4]",
 										"border-none",
 										"inner-shadow-input",
-										"font-[Satoshi]",
+										"font-[Satoshi-Medium]",
 										"bg-[#1C1E21]",
 										"!cursor-text",
 										"h-11",
@@ -751,7 +751,7 @@ const CathegoryDetail = () => {
 													src={result?.image}
 													alt=""
 												/>
-												<span className="text-white font-[Satoshi] text-left text-sm">
+												<span className="text-white font-[Satoshi-Medium] text-left text-sm">
 													{result.name}
 												</span>
 											</div>
@@ -821,7 +821,7 @@ const CathegoryDetail = () => {
 															</Badge>
 															<Dropdown
 																classNames={{
-																	base: "bg-[#3D1D93] text-white font-[Satoshi]",
+																	base: "bg-[#3D1D93] text-white font-[Satoshi-Medium]",
 																}}>
 																<DropdownTrigger>
 																	<Button
@@ -855,14 +855,14 @@ const CathegoryDetail = () => {
 																	input: [
 																		"bg-[#1C1E21]",
 																		"text-white dark:text-white/90",
-																		"font-[Satoshi]",
+																		"font-[Satoshi-Medium]",
 																		"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 																	],
 																	inputWrapper: [
 																		"data-[hover=true]:border-[#EBD5C4]",
 																		"border-none",
 																		"inner-shadow-input",
-																		"font-[Satoshi]",
+																		"font-[Satoshi-Medium]",
 																		"bg-[#1C1E21]",
 																		"!cursor-text",
 																		"h-11",
@@ -887,7 +887,7 @@ const CathegoryDetail = () => {
 																		? true
 																		: false
 																}
-																className="bg-[#3d1d93] font-[Satoshi] text-sm text-white w-auto">
+																className="bg-[#3d1d93] font-[Satoshi-Medium] text-sm text-white w-auto">
 																Update
 															</Button>
 														</div>
@@ -900,14 +900,14 @@ const CathegoryDetail = () => {
 																	input: [
 																		"bg-[#1C1E21]",
 																		"text-white dark:text-white/90",
-																		"font-[Satoshi]",
+																		"font-[Satoshi-Medium]",
 																		"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 																	],
 																	inputWrapper: [
 																		"data-[hover=true]:border-[#EBD5C4]",
 																		"border-none",
 																		"inner-shadow-input",
-																		"font-[Satoshi]",
+																		"font-[Satoshi-Medium]",
 																		"bg-[#1C1E21]",
 																		"!cursor-text",
 																		"h-11",
@@ -925,14 +925,14 @@ const CathegoryDetail = () => {
 																	input: [
 																		"bg-[#1C1E21]",
 																		"text-white dark:text-white/90",
-																		"font-[Satoshi]",
+																		"font-[Satoshi-Medium]",
 																		"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 																	],
 																	inputWrapper: [
 																		"data-[hover=true]:border-[#EBD5C4]",
 																		"border-none",
 																		"inner-shadow-input",
-																		"font-[Satoshi]",
+																		"font-[Satoshi-Medium]",
 																		"bg-[#1C1E21]",
 																		"!cursor-text",
 																		"h-11",
@@ -954,14 +954,14 @@ const CathegoryDetail = () => {
 																			input: [
 																				"bg-[#1C1E21]",
 																				"text-white dark:text-white/90",
-																				"font-[Satoshi]",
+																				"font-[Satoshi-Medium]",
 																				"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 																			],
 																			inputWrapper: [
 																				"data-[hover=true]:border-[#EBD5C4]",
 																				"border-none",
 																				"inner-shadow-input",
-																				"font-[Satoshi]",
+																				"font-[Satoshi-Medium]",
 																				"bg-[#1C1E21]",
 																				"!cursor-text",
 																				"h-11",
@@ -980,14 +980,14 @@ const CathegoryDetail = () => {
 																			input: [
 																				"bg-[#1C1E21]",
 																				"text-white dark:text-white/90",
-																				"font-[Satoshi]",
+																				"font-[Satoshi-Medium]",
 																				"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 																			],
 																			inputWrapper: [
 																				"data-[hover=true]:border-[#EBD5C4]",
 																				"border-none",
 																				"inner-shadow-input",
-																				"font-[Satoshi]",
+																				"font-[Satoshi-Medium]",
 																				"bg-[#1C1E21]",
 																				"!cursor-text",
 																				"h-11",
@@ -998,12 +998,12 @@ const CathegoryDetail = () => {
 																	/>
 																</div>
 																{editSuccess && (
-																	<span className="font-[Satoshi] text-green-500 text-medium text-center">
+																	<span className="font-[Satoshi-Medium] text-green-500 text-medium text-center">
 																		Updated!
 																	</span>
 																)}
 																{editError && (
-																	<span className="font-[Satoshi] text-red-500 text-medium text-center">
+																	<span className="font-[Satoshi-Medium] text-red-500 text-medium text-center">
 																		Error, try again
 																	</span>
 																)}
@@ -1018,7 +1018,7 @@ const CathegoryDetail = () => {
 							)}
 							{searchResultError && (
 								<div className="overflow-hidden mb-[-10px] mt-4 px-3 h-11 w-full rounded-[10px] flex flex-row justify-star items-center gap-3 bg-[#1c1e21] inner-shadow-input">
-									<span className="text-white font-[Satoshi] text-left text-sm">
+									<span className="text-white font-[Satoshi-Medium] text-left text-sm">
 										No results
 									</span>
 								</div>
@@ -1079,7 +1079,7 @@ const CathegoryDetail = () => {
 											<ProductCard product={product} />
 											<button
 												onClick={onOpenModal1}
-												className="bg-none border-[#C8D9FF]/50 border-2 border-t-0 text-white font-[Satoshi] text-[12px] rounded-b-[8px] px-3 ">
+												className="bg-none border-[#C8D9FF]/50 border-2 border-t-0 text-white font-[Satoshi-Medium] text-[12px] rounded-b-[8px] px-3 ">
 												See detail
 											</button>
 										</div>
@@ -1149,7 +1149,7 @@ const CathegoryDetail = () => {
 												</Badge>
 												<Dropdown
 													classNames={{
-														base: "bg-[#3D1D93] text-white font-[Satoshi]",
+														base: "bg-[#3D1D93] text-white font-[Satoshi-Medium]",
 													}}>
 													<DropdownTrigger>
 														<Button
@@ -1183,14 +1183,14 @@ const CathegoryDetail = () => {
 														input: [
 															"bg-[#1C1E21]",
 															"text-white dark:text-white/90",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 														],
 														inputWrapper: [
 															"data-[hover=true]:border-[#EBD5C4]",
 															"border-none",
 															"inner-shadow-input",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"bg-[#1C1E21]",
 															"!cursor-text",
 															"h-11",
@@ -1213,7 +1213,7 @@ const CathegoryDetail = () => {
 															? true
 															: false
 													}
-													className="bg-[#3d1d93] font-[Satoshi] text-sm text-white w-auto">
+													className="bg-[#3d1d93] font-[Satoshi-Medium] text-sm text-white w-auto">
 													Update
 												</Button>
 											</div>
@@ -1226,14 +1226,14 @@ const CathegoryDetail = () => {
 														input: [
 															"bg-[#1C1E21]",
 															"text-white dark:text-white/90",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 														],
 														inputWrapper: [
 															"data-[hover=true]:border-[#EBD5C4]",
 															"border-none",
 															"inner-shadow-input",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"bg-[#1C1E21]",
 															"!cursor-text",
 															"h-11",
@@ -1251,14 +1251,14 @@ const CathegoryDetail = () => {
 														input: [
 															"bg-[#1C1E21]",
 															"text-white dark:text-white/90",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 														],
 														inputWrapper: [
 															"data-[hover=true]:border-[#EBD5C4]",
 															"border-none",
 															"inner-shadow-input",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"bg-[#1C1E21]",
 															"!cursor-text",
 															"h-11",
@@ -1280,14 +1280,14 @@ const CathegoryDetail = () => {
 																input: [
 																	"bg-[#1C1E21]",
 																	"text-white dark:text-white/90",
-																	"font-[Satoshi]",
+																	"font-[Satoshi-Medium]",
 																	"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 																],
 																inputWrapper: [
 																	"data-[hover=true]:border-[#EBD5C4]",
 																	"border-none",
 																	"inner-shadow-input",
-																	"font-[Satoshi]",
+																	"font-[Satoshi-Medium]",
 																	"bg-[#1C1E21]",
 																	"!cursor-text",
 																	"h-11",
@@ -1306,14 +1306,14 @@ const CathegoryDetail = () => {
 																input: [
 																	"bg-[#1C1E21]",
 																	"text-white dark:text-white/90",
-																	"font-[Satoshi]",
+																	"font-[Satoshi-Medium]",
 																	"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 																],
 																inputWrapper: [
 																	"data-[hover=true]:border-[#EBD5C4]",
 																	"border-none",
 																	"inner-shadow-input",
-																	"font-[Satoshi]",
+																	"font-[Satoshi-Medium]",
 																	"bg-[#1C1E21]",
 																	"!cursor-text",
 																	"h-11",
@@ -1324,12 +1324,12 @@ const CathegoryDetail = () => {
 														/>
 													</div>
 													{editSuccess && (
-														<span className="font-[Satoshi] text-green-500 text-medium text-center">
+														<span className="font-[Satoshi-Medium] text-green-500 text-medium text-center">
 															Updated!
 														</span>
 													)}
 													{editError && (
-														<span className="font-[Satoshi] text-red-500 text-medium text-center">
+														<span className="font-[Satoshi-Medium] text-red-500 text-medium text-center">
 															Error, try again
 														</span>
 													)}

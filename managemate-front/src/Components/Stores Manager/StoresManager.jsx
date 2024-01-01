@@ -167,7 +167,7 @@ const StoresManager = () => {
 				<NavbarContent as="div" justify="end">
 					<Dropdown
 						placement="bottom-end"
-						className="bg-[#3D1D93] text-white shadow-[4px_4px_12px_2px_rgba(0,0,0,0.8)] font-[Satoshi]">
+						className="bg-[#3D1D93] text-white shadow-[4px_4px_12px_2px_rgba(0,0,0,0.8)] font-[Satoshi-Medium]">
 						<DropdownTrigger>
 							<Avatar
 								as="button"
@@ -212,7 +212,7 @@ const StoresManager = () => {
 						onChange={handleToggle}
 						aria-label="Active/Inactive"
 						classNames={{
-							label: ["text-[12px]", "font-[Satoshi]", "text-white"],
+							label: ["text-[12px]", "font-[Satoshi-Medium]", "text-white"],
 							wrapper: "bg-[#383C42]",
 							startContent: "bg-green-500",
 						}}>
@@ -239,7 +239,7 @@ const StoresManager = () => {
 								</ModalContent>
 							</Modal>
 							{/* </Link> */}
-							<Dropdown className="bg-[#3d1d93] text-white font-[Satoshi]">
+							<Dropdown className="bg-[#3d1d93] text-white font-[Satoshi-Medium]">
 								<DropdownTrigger>
 									<Button className=" text-[12px] rounded-[5px] bg-[#3D1D93] text-white font-[Satoshi-Bold]">
 										{selectedFilterValue}

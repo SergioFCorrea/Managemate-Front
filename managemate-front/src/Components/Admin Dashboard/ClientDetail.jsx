@@ -227,18 +227,18 @@ const ClientDetail = ({clientId}) => {
 								)}
 							</p>
 							{clientInfo?.image?.length === 0 ? (
-								<Avatar className="w-32 h-32 font-[Satoshi] text-xl text-[#3d1d93] bg-white inner-shadow-2" />
+								<Avatar className="w-32 h-32 font-[Satoshi-Medium] text-xl text-[#3d1d93] bg-white inner-shadow-2" />
 							) : (
 								<img
 									src={clientInfo.image}
 									className="w-32 h-32 object-cover rounded-full"
 								/>
 							)}
-							<p className="font-[Satoshi] text-white text-[12px] bg-white backdrop-blur-[8px] bg-opacity-20  px-2 py-1 rounded-lg text-center">
+							<p className="font-[Satoshi-Medium] text-white text-[12px] bg-white backdrop-blur-[8px] bg-opacity-20  px-2 py-1 rounded-lg text-center">
 								{`${clientInfo?.name} ${clientInfo?.lastName}`}
 							</p>
 							{clientInfo.idNumber !== 0 && (
-								<p className="font-[Satoshi] text-white text-[12px] bg-white backdrop-blur-[8px] bg-opacity-20  px-2 py-1 rounded-lg">
+								<p className="font-[Satoshi-Medium] text-white text-[12px] bg-white backdrop-blur-[8px] bg-opacity-20  px-2 py-1 rounded-lg">
 									{clientInfo?.idNumber}
 								</p>
 							)}
@@ -246,7 +246,7 @@ const ClientDetail = ({clientId}) => {
 								{clientInfo.igUsername && (
 									<Tooltip
 										content={clientInfo?.igUsername}
-										className="font-[Satoshi] bg-[#232529] text-white">
+										className="font-[Satoshi-Medium] bg-[#232529] text-white">
 										<Link
 											target="blank"
 											to={`https://www.instagram.com/${urlIgUsername}/`}>
@@ -264,7 +264,7 @@ const ClientDetail = ({clientId}) => {
 								{clientInfo.phoneNumber !== 0 && (
 									<Tooltip
 										content={`Phone number: ${clientInfo.phoneNumber}`}
-										className="font-[Satoshi] bg-[#232529] text-white">
+										className="font-[Satoshi-Medium] bg-[#232529] text-white">
 										<svg
 											className="h-6 w-6 fill-white"
 											role="img"
@@ -312,7 +312,7 @@ const ClientDetail = ({clientId}) => {
 							classNames={{
 								title: "text-white text-medium",
 							}}
-							className="bg-[#3d1d93] font-[Satoshi] text-sm text-white w-full"
+							className="bg-[#3d1d93] font-[Satoshi-Medium] text-sm text-white w-full"
 							title="Edit client">
 							<div className="flex flex-col justify-center items-center">
 								<div className="flex flex-col  justify-center items-center gap-3 w-full">
@@ -375,13 +375,13 @@ const ClientDetail = ({clientId}) => {
 														input: [
 															"bg-[#1C1E21]",
 															"text-white dark:text-white/90",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 														],
 														inputWrapper: [
 															"data-[hover=true]:border-[#EBD5C4]",
 															"border-none",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"bg-[#C8D9FF] backdrop-blur-[8px] bg-opacity-30",
 															"!cursor-text",
 															"h-11",
@@ -402,13 +402,13 @@ const ClientDetail = ({clientId}) => {
 														input: [
 															"bg-[#1C1E21]",
 															"text-white dark:text-white/90",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 														],
 														inputWrapper: [
 															"data-[hover=true]:border-[#EBD5C4]",
 															"border-none",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"bg-[#C8D9FF] backdrop-blur-[8px] bg-opacity-30",
 															"!cursor-text",
 															"h-11",
@@ -427,13 +427,13 @@ const ClientDetail = ({clientId}) => {
 														input: [
 															"bg-[#1C1E21]",
 															"text-white dark:text-white/90",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 														],
 														inputWrapper: [
 															"data-[hover=true]:border-[#EBD5C4]",
 															"border-none",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"bg-[#C8D9FF] backdrop-blur-[8px] bg-opacity-30",
 															"!cursor-text",
 															"h-11",
@@ -456,13 +456,13 @@ const ClientDetail = ({clientId}) => {
 														input: [
 															"bg-[#1C1E21]",
 															"text-white dark:text-white/90",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 														],
 														inputWrapper: [
 															"data-[hover=true]:border-[#EBD5C4]",
 															"border-none",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"bg-[#C8D9FF] backdrop-blur-[8px] bg-opacity-30",
 															"!cursor-text",
 															"h-11",
@@ -481,13 +481,13 @@ const ClientDetail = ({clientId}) => {
 														input: [
 															"bg-[#1C1E21]",
 															"text-white dark:text-white/90",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 														],
 														inputWrapper: [
 															"data-[hover=true]:border-[#EBD5C4]",
 															"border-none",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"bg-[#C8D9FF] backdrop-blur-[8px] bg-opacity-30",
 															"!cursor-text",
 															"h-11",
@@ -507,13 +507,13 @@ const ClientDetail = ({clientId}) => {
 													input: [
 														"bg-[#1C1E21]",
 														"text-white dark:text-white/90",
-														"font-[Satoshi]",
+														"font-[Satoshi-Medium]",
 														"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 													],
 													inputWrapper: [
 														"data-[hover=true]:border-[#EBD5C4]",
 														"border-none",
-														"font-[Satoshi]",
+														"font-[Satoshi-Medium]",
 														"bg-[#C8D9FF] backdrop-blur-[8px] bg-opacity-30",
 														"!cursor-text",
 														"h-11",
@@ -535,13 +535,13 @@ const ClientDetail = ({clientId}) => {
 														input: [
 															"bg-[#1C1E21]",
 															"text-white dark:text-white/90",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 														],
 														inputWrapper: [
 															"data-[hover=true]:border-[#EBD5C4]",
 															"border-none",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"bg-[#C8D9FF] backdrop-blur-[8px] bg-opacity-30",
 															"!cursor-text",
 															"h-11",
@@ -560,13 +560,13 @@ const ClientDetail = ({clientId}) => {
 														input: [
 															"bg-[#1C1E21]",
 															"text-white dark:text-white/90",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 														],
 														inputWrapper: [
 															"data-[hover=true]:border-[#EBD5C4]",
 															"border-none",
-															"font-[Satoshi]",
+															"font-[Satoshi-Medium]",
 															"bg-[#C8D9FF] backdrop-blur-[8px] bg-opacity-30",
 															"!cursor-text",
 															"h-11",
@@ -586,13 +586,13 @@ const ClientDetail = ({clientId}) => {
 													input: [
 														"bg-[#1C1E21]",
 														"text-white dark:text-white/90",
-														"font-[Satoshi]",
+														"font-[Satoshi-Medium]",
 														"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 													],
 													inputWrapper: [
 														"data-[hover=true]:border-[#EBD5C4]",
 														"border-none",
-														"font-[Satoshi]",
+														"font-[Satoshi-Medium]",
 														"bg-[#C8D9FF] backdrop-blur-[8px] bg-opacity-30",
 														"!cursor-text",
 														"h-11",
@@ -608,7 +608,7 @@ const ClientDetail = ({clientId}) => {
 												variant="bordered"
 												label="Adress details"
 												classNames={{
-													base: "font-[Satoshi] ",
+													base: "font-[Satoshi-Medium] ",
 													inputWrapper:
 														"bg-[#C8D9FF] backdrop-blur-[8px] bg-opacity-30 border-none",
 													input: "text-white",
@@ -621,7 +621,7 @@ const ClientDetail = ({clientId}) => {
 												variant="bordered"
 												label="Notes"
 												classNames={{
-													base: "font-[Satoshi] ",
+													base: "font-[Satoshi-Medium] ",
 													inputWrapper:
 														"bg-[#C8D9FF] backdrop-blur-[8px] bg-opacity-30 border-none",
 													input: "text-white",
@@ -645,17 +645,17 @@ const ClientDetail = ({clientId}) => {
 												? true
 												: false
 										}
-										className="bg-[#c8d9ff] font-[Satoshi] text-sm text-[#3d1d93] w-auto">
+										className="bg-[#c8d9ff] font-[Satoshi-Medium] text-sm text-[#3d1d93] w-auto">
 										Update
 									</Button>
 
 									{editSuccess && (
-										<span className="font-[Satoshi] text-green-500 text-medium text-center">
+										<span className="font-[Satoshi-Medium] text-green-500 text-medium text-center">
 											Updated!
 										</span>
 									)}
 									{editError && (
-										<span className="font-[Satoshi] text-red-500 text-medium text-center">
+										<span className="font-[Satoshi-Medium] text-red-500 text-medium text-center">
 											Error, try again
 										</span>
 									)}
@@ -667,7 +667,7 @@ const ClientDetail = ({clientId}) => {
 			)}
 			{!loading && (
 				<div className="flex-col flex gap-5 md:px-5 justify-center items-center w-full">
-					<p className="text-white font-[Satoshi] text-xl  mt-8">Orders</p>
+					<p className="text-white font-[Satoshi-Medium] text-xl  mt-8">Orders</p>
 					{clientInfo?.orders?.length > 0 ? (
 						<Table
 							aria-label="Active orders"
@@ -714,7 +714,7 @@ const ClientDetail = ({clientId}) => {
 							</TableBody>
 						</Table>
 					) : (
-						<span className="text-white font-[Satoshi] text-medium text-center w-full bg-[#232529] h-8 rounded-md flex justify-center items-center">
+						<span className="text-white font-[Satoshi-Medium] text-medium text-center w-full bg-[#232529] h-8 rounded-md flex justify-center items-center">
 							No orders yet
 						</span>
 					)}

@@ -177,7 +177,7 @@ const StoreConfigurator = () => {
 				<NavbarContent as="div" justify="end">
 					<Dropdown
 						placement="bottom-end"
-						className="bg-[#3D1D93] text-white shadow-[4px_4px_12px_2px_rgba(0,0,0,0.8)] font-[Satoshi]">
+						className="bg-[#3D1D93] text-white shadow-[4px_4px_12px_2px_rgba(0,0,0,0.8)] font-[Satoshi-Medium]">
 						<DropdownTrigger>
 							<Avatar
 								as="button"
@@ -260,7 +260,7 @@ const StoreConfigurator = () => {
 										onValueChange={setActiveStore}
 										aria-label="Active/Inactive"
 										classNames={{
-											label: ["text-[12px]", "font-[Satoshi]", "text-white"],
+											label: ["text-[12px]", "font-[Satoshi-Medium]", "text-white"],
 											wrapper: "bg-[#383C42]",
 											startContent: "bg-green-500",
 										}}>
@@ -289,12 +289,12 @@ const StoreConfigurator = () => {
 											input: [
 												"bg-[#EBD5C4]",
 												"text-[#232529] dark:text-white/90",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"placeholder:text-default-700/50 dark:placeholder:text-white/60",
 											],
 											innerWrapper: "bg-green-500",
 											inputWrapper: [
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"bg-[#EBD5C4]",
 												"!cursor-text",
 												"h-12",
@@ -398,12 +398,12 @@ const StoreConfigurator = () => {
 								Update
 							</Button>
 							{editSuccess && (
-								<span className="font-[Satoshi] text-green-500 text-medium text-center">
+								<span className="font-[Satoshi-Medium] text-green-500 text-medium text-center">
 									Updated!
 								</span>
 							)}
 							{editError && (
-								<span className="font-[Satoshi] text-red-500 text-medium text-center">
+								<span className="font-[Satoshi-Medium] text-red-500 text-medium text-center">
 									Error, try again
 								</span>
 							)}
