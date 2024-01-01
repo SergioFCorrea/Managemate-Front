@@ -186,7 +186,7 @@ const StoresManager = () => {
 								<button
 									onClick={() => {
 										logOut();
-										navigate();
+										navigate("/login");
 									}}>
 									Log Out
 								</button>
