@@ -164,7 +164,7 @@ const ClientCreation = () => {
 						<div className="w-full md:w-[250px] flex justify-center items-center flex-col gap-6 ">
 							<div className="flex flex-col justify-center items-center gap-2">
 								{!selectedImage ? (
-									<Avatar className="w-28 h-28 font-[Satoshi] text-xl text-[#3d1d93] bg-white inner-shadow-2" />
+									<Avatar className="w-28 h-28 font-[Satoshi-Medium] text-xl text-[#3d1d93] bg-white inner-shadow-2" />
 								) : (
 									<img
 										src={selectedImage}
@@ -197,13 +197,13 @@ const ClientCreation = () => {
 									input: [
 										"bg-white",
 										"text-[#232529] dark:text-white/90",
-										"font-[Satoshi]",
+										"font-[Satoshi-Medium]",
 										"placeholder:text-[#232529] dark:placeholder:text-white/60",
 									],
 									inputWrapper: [
 										"data-[hover=true]:border-[#EBD5C4]",
 										"border-none",
-										"font-[Satoshi]",
+										"font-[Satoshi-Medium]",
 										"bg-white",
 										"!cursor-text",
 										"h-11",
@@ -221,13 +221,13 @@ const ClientCreation = () => {
 									input: [
 										"bg-white",
 										"text-[#232529] dark:text-white/90",
-										"font-[Satoshi]",
+										"font-[Satoshi-Medium]",
 										"placeholder:text-[#232529] dark:placeholder:text-white/60",
 									],
 									inputWrapper: [
 										"data-[hover=true]:border-[#EBD5C4]",
 										"border-none",
-										"font-[Satoshi]",
+										"font-[Satoshi-Medium]",
 										"bg-white",
 										"!cursor-text",
 										"h-11",
@@ -238,7 +238,7 @@ const ClientCreation = () => {
 							/>
 							<Dropdown 
 							classNames={{
-								base: "bg-[#3D1D93] text-white font-[Satoshi]",
+								base: "bg-[#3D1D93] text-white font-[Satoshi-Medium]",
 							}}>
 								<DropdownTrigger>
 									<Button
@@ -282,13 +282,13 @@ const ClientCreation = () => {
 												errors.name
 													? "text-white"
 													: "text-[#232529] dark:text-white/90",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"placeholder:text-[#3d1d93] dark:placeholder:text-white/60",
 											],
 											inputWrapper: [
 												"data-[hover=true]:border-[#EBD5C4]",
 												"border-none",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												errors.name ? "bg-none" : "bg-white",
 												"!cursor-text",
 												"h-11",
@@ -310,13 +310,13 @@ const ClientCreation = () => {
 												errors.lastName
 													? "text-white"
 													: "text-[#232529] dark:text-white/90",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"placeholder:text-[#3d1d93] dark:placeholder:text-white/60",
 											],
 											inputWrapper: [
 												"data-[hover=true]:border-[#EBD5C4]",
 												"border-none",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												errors.lastName ? "bg-none" : "bg-white",
 												"!cursor-text",
 												"h-11",
@@ -338,13 +338,13 @@ const ClientCreation = () => {
 											input: [
 												"bg-white",
 												"text-[#232529] dark:text-white/90",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"placeholder:text-[#3d1d93] dark:placeholder:text-white/60",
 											],
 											inputWrapper: [
 												"data-[hover=true]:border-[#EBD5C4]",
 												"border-none",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"bg-white",
 												"!cursor-text",
 												"h-11",
@@ -363,13 +363,13 @@ const ClientCreation = () => {
 											input: [
 												"bg-white",
 												"text-[#232529] dark:text-white/90",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"placeholder:text-[#3d1d93] dark:placeholder:text-white/60",
 											],
 											inputWrapper: [
 												"data-[hover=true]:border-[#EBD5C4]",
 												"border-none",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"bg-white",
 												"!cursor-text",
 												"h-11",
@@ -396,13 +396,13 @@ const ClientCreation = () => {
 												errors.city
 													? "text-white"
 													: "text-[#232529] dark:text-white/90",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"placeholder:text-[#3d1d93] dark:placeholder:text-white/60",
 											],
 											inputWrapper: [
 												"data-[hover=true]:border-[#EBD5C4]",
 												"border-none",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												errors.city ? "bg-none" : "bg-white",
 												"!cursor-text",
 												"h-11",
@@ -424,13 +424,13 @@ const ClientCreation = () => {
 												errors.adress
 													? "text-white"
 													: "text-[#232529] dark:text-white/90",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"placeholder:text-[#3d1d93] dark:placeholder:text-white/60",
 											],
 											inputWrapper: [
 												"data-[hover=true]:border-[#EBD5C4]",
 												"border-none",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												errors.adress ? "bg-none" : "bg-white",
 												"!cursor-text",
 												"h-11",
@@ -454,13 +454,13 @@ const ClientCreation = () => {
 												errors.neighborhood
 													? "text-white"
 													: "text-[#232529] dark:text-white/90",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"placeholder:text-[#3d1d93] dark:placeholder:text-white/60",
 											],
 											inputWrapper: [
 												"data-[hover=true]:border-[#EBD5C4]",
 												"border-none",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												errors.neighborhood ? "bg-none" : "bg-white",
 												"!cursor-text",
 												"h-11",
@@ -478,13 +478,13 @@ const ClientCreation = () => {
 											input: [
 												"bg-white",
 												"text-[#232529] dark:text-white/90",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"placeholder:text-[#3d1d93] dark:placeholder:text-white/60",
 											],
 											inputWrapper: [
 												"data-[hover=true]:border-[#EBD5C4]",
 												"border-none",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"bg-white",
 												"!cursor-text",
 												"h-11",

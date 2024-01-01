@@ -319,7 +319,7 @@ const Clients = () => {
 				<NavbarContent as="div" justify="end">
 					<Dropdown
 						placement="bottom-end"
-						className="bg-[#3D1D93] text-white shadow-[4px_4px_12px_2px_rgba(0,0,0,0.8)] font-[Satoshi]">
+						className="bg-[#3D1D93] text-white shadow-[4px_4px_12px_2px_rgba(0,0,0,0.8)] font-[Satoshi-Medium]">
 						<DropdownTrigger>
 							<Avatar
 								as="button"
@@ -370,7 +370,7 @@ const Clients = () => {
 							<Link to={`/dashboard/client-creation/${id}`}>
 								<Button
 									radius="sm"
-									className="bg-[#3d1d93] font-[Satoshi] text-medium text-white w-34">
+									className="bg-[#3d1d93] font-[Satoshi-Medium] text-medium text-white w-34">
 									New client
 									<svg
 										className="fill-white"
@@ -412,14 +412,14 @@ const Clients = () => {
 											"data-hover:bg-red-500",
 											"bg-[#1C1E21]",
 											"text-white dark:text-white/90",
-											"font-[Satoshi]",
+											"font-[Satoshi-Medium]",
 											"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 										],
 										inputWrapper: [
 											"data-[hover=true]:border-[#EBD5C4]",
 											"border-none",
 											"inner-shadow-input",
-											"font-[Satoshi]",
+											"font-[Satoshi-Medium]",
 											"bg-[#1C1E21]",
 											"!cursor-text",
 											"h-11",
@@ -458,7 +458,7 @@ const Clients = () => {
 														src={result?.image}
 														alt=""
 													/>
-													<span className="text-white font-[Satoshi] text-left text-sm">
+													<span className="text-white font-[Satoshi-Medium] text-left text-sm">
 														{searchData.includes("@")
 															? result.igUsername
 															: result.name + " " + result.lastName}
@@ -479,7 +479,7 @@ const Clients = () => {
 								)}
 								{searchError && (
 									<div className="overflow-hidden mb-[-10px] mt-4 px-3 h-11 w-full rounded-[10px] flex flex-row justify-star items-center gap-3 bg-[#1c1e21] inner-shadow-input">
-										<span className="text-white font-[Satoshi] text-left text-sm">
+										<span className="text-white font-[Satoshi-Medium] text-left text-sm">
 											No results
 										</span>
 									</div>
@@ -517,7 +517,7 @@ const Clients = () => {
 											);
 										})
 									) : (
-										<span className="h-full font-[Satoshi] text-white text-lg text-center flex items-center">
+										<span className="h-full font-[Satoshi-Medium] text-white text-lg text-center flex items-center">
 											No orders
 										</span>
 									)}

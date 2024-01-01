@@ -126,19 +126,19 @@ const OrderDetail = ({orderId}) => {
 									className="w-32 h-32 object-cover rounded-full inner-shadow-2"
 								/>
 							) : (
-								<Avatar className="w-32 h-32 font-[Satoshi] text-xl text-[#3d1d93] bg-white inner-shadow-2" />
+								<Avatar className="w-32 h-32 font-[Satoshi-Medium] text-xl text-[#3d1d93] bg-white inner-shadow-2" />
 							)}
-							<p className="font-[Satoshi] text-white text-[12px] bg-white backdrop-blur-[8px] bg-opacity-20  px-2 py-1 rounded-lg text-center">
+							<p className="font-[Satoshi-Medium] text-white text-[12px] bg-white backdrop-blur-[8px] bg-opacity-20  px-2 py-1 rounded-lg text-center">
 								{order.client.name}
 							</p>
-							<p className="font-[Satoshi] text-white text-[12px] bg-white backdrop-blur-[8px] bg-opacity-20  px-2 py-1 rounded-lg">
+							<p className="font-[Satoshi-Medium] text-white text-[12px] bg-white backdrop-blur-[8px] bg-opacity-20  px-2 py-1 rounded-lg">
 								{order.client.idNumber || ""}
 							</p>
 							<div className="flex justify-between- items-center gap-6">
 								<Link to={`https://www.instagram.com/${urlIgUsername}/`}>
 									<Tooltip
 										content={order.client.igUsername || ""}
-										className="font-[Satoshi] bg-[#232529] text-white">
+										className="font-[Satoshi-Medium] bg-[#232529] text-white">
 										<svg
 											className="h-6 w-6 fill-white"
 											role="img"
@@ -151,7 +151,7 @@ const OrderDetail = ({orderId}) => {
 								</Link>
 								<Tooltip
 									content={order.client.phoneNumber || ""}
-									className="font-[Satoshi] bg-[#232529] text-white">
+									className="font-[Satoshi-Medium] bg-[#232529] text-white">
 									<svg
 										className="h-6 w-6 fill-white"
 										role="img"
@@ -166,7 +166,7 @@ const OrderDetail = ({orderId}) => {
 						<div className="flex-col flex just items-center gap-4">
 							<div className="  hide-scrollbar w-[200px] min-h-[160px] max-h-[880px] rounded-[16px] bg-[#232529] flex flex-col justify-between items-center pb-5 gap-5 overflow-y-scroll shadow-[4px_4px_12px_0px_rgba(0,0,0,0.2)]">
 								<div className="w-full h-10 bg-[#1C1E21] rounded-t-[16px] flex justify-center items-center">
-									<p className="font-[Satoshi] text-[#c8d9ff] text-sm">
+									<p className="font-[Satoshi-Medium] text-[#c8d9ff] text-sm">
 										$
 										{order.products.reduce((total, product) => {
 											return total + product.salePrice;
@@ -230,7 +230,7 @@ const OrderDetail = ({orderId}) => {
 							}>
 							{!changeShipping ? (
 								<div className="w-[220px] md:w-full  h-[120px] bg-[#3d1d93] rounded-[16px] flex flex-col justify-center items-center p-2 gap-3 shadow-[4px_4px_12px_0px_rgba(0,0,0,0.4)]">
-									<p className="font-[Satoshi] text-white text-medium md:text-lg">
+									<p className="font-[Satoshi-Medium] text-white text-medium md:text-lg">
 										Shipment
 									</p>
 									<div className="w-full flex flex-col justify-center items-center gap-1">
@@ -302,7 +302,7 @@ const OrderDetail = ({orderId}) => {
 							) : (
 								<div className="w-[220px] md:w-full h-auto p-5 bg-[#3d1d93] rounded-[16px] flex flex-col justify-center items-center  gap-3 shadow-[4px_4px_12px_0px_rgba(0,0,0,0.4)]">
 									<div className="flex flex-col justify-center items-center gap-3">
-										<p className="font-[Satoshi] text-white text-medium md:text-lg">
+										<p className="font-[Satoshi-Medium] text-white text-medium md:text-lg">
 											Shipment
 										</p>
 										<div className="w-full flex flex-col md:flex-row justify-center items-center gap-3">
@@ -410,7 +410,7 @@ const OrderDetail = ({orderId}) => {
 							) : (
 								<div className="w-[220px] md:w-full h-auto p-5 bg-[#3d1d93] rounded-[16px] flex flex-col justify-center items-center  gap-2 shadow-[4px_4px_12px_0px_rgba(0,0,0,0.4)]">
 									<div className="flex flex-col justify-center items-center gap-3">
-										<p className="font-[Satoshi] text-white text-medium md:text-lg">
+										<p className="font-[Satoshi-Medium] text-white text-medium md:text-lg">
 											Payment
 										</p>
 										<div className="w-full flex flex-col md:flex-row justify-center items-center gap-3">

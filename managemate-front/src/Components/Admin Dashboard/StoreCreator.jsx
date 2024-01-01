@@ -146,7 +146,7 @@ const StoreCreator = () => {
 									/>
 								)}
 								{!selectedImage && (
-									<Avatar className="w-28 h-28 font-[Satoshi] text-xl text-[#ebd5c4] bg-gray-700" />
+									<Avatar className="w-28 h-28 font-[Satoshi-Medium] text-xl text-[#ebd5c4] bg-gray-700" />
 								)}
 
 								<button onClick={handleUploadImage}>
@@ -181,12 +181,12 @@ const StoreCreator = () => {
 												? "text-white"
 												: "text-[#232529] dark:text-white/90",
 											"text-[#232529] dark:text-white/90",
-											"font-[Satoshi]",
+											"font-[Satoshi-Medium]",
 											"placeholder:text-default-700/50 dark:placeholder:text-white/60",
 										],
 										innerWrapper: "bg-green-500",
 										inputWrapper: [
-											"font-[Satoshi]",
+											"font-[Satoshi-Medium]",
 											errors.name ? "bg-none" : "bg-[#EBD5C4]",
 											"!cursor-text",
 											"h-12",
@@ -279,7 +279,7 @@ const StoreCreator = () => {
 										</Checkbox>
 									</CheckboxGroup>
 									{selected.length === 0 && (
-										<span className="text-red-500 font-[Satoshi] text-sm text-center">
+										<span className="text-red-500 font-[Satoshi-Medium] text-sm text-center">
 											Please select at least one
 										</span>
 									)}
@@ -289,7 +289,9 @@ const StoreCreator = () => {
 								<p className="font-[Poppins] text-white text-medium text-center">
 									How big is your store
 								</p>
-								<Dropdown>
+								<Dropdown classNames={{
+								base: "bg-[#EBD5C4] text-[#232529] font-[Satoshi-Medium]",
+							}}>
 									<DropdownTrigger>
 										<Button
 											variant={
@@ -336,7 +338,7 @@ const StoreCreator = () => {
 								</Dropdown>
 								{selectedKeys.has("Select size") ||
 									(dropdownValue.length === 0 && (
-										<span className="text-red-500 font-[Satoshi] text-sm text-center">
+										<span className="text-red-500 font-[Satoshi-Medium] text-sm text-center">
 											Space can't be empty
 										</span>
 									))}

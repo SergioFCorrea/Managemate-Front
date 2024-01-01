@@ -424,7 +424,7 @@ const Inventory = () => {
 				<NavbarContent as="div" justify="end">
 					<Dropdown
 						placement="bottom-end"
-						className="bg-[#3D1D93] text-white shadow-[4px_4px_12px_2px_rgba(0,0,0,0.8)] font-[Satoshi]">
+						className="bg-[#3D1D93] text-white shadow-[4px_4px_12px_2px_rgba(0,0,0,0.8)] font-[Satoshi-Medium]">
 						<DropdownTrigger>
 							<Avatar
 								as="button"
@@ -469,7 +469,7 @@ const Inventory = () => {
 						<Button
 							onClick={onOpenModal1}
 							radius="sm"
-							className="bg-[#3d1d93] font-[Satoshi] text-medium text-white w-auto">
+							className="bg-[#3d1d93] font-[Satoshi-Medium] text-medium text-white w-auto">
 							New product
 							<svg
 								className="fill-white"
@@ -496,7 +496,7 @@ const Inventory = () => {
 						</Modal>
 						<Dropdown
 							classNames={{
-								base: "bg-[#3D1D93] text-white font-[Satoshi]",
+								base: "bg-[#3D1D93] text-white font-[Satoshi-Medium]",
 							}}>
 							<DropdownTrigger>
 								<Button
@@ -555,14 +555,14 @@ const Inventory = () => {
 									"data-hover:bg-red-500",
 									"bg-[#1C1E21]",
 									"text-white dark:text-white/90",
-									"font-[Satoshi]",
+									"font-[Satoshi-Medium]",
 									"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 								],
 								inputWrapper: [
 									"data-[hover=true]:border-[#EBD5C4]",
 									"border-none",
 									"inner-shadow-input",
-									"font-[Satoshi]",
+									"font-[Satoshi-Medium]",
 									"bg-[#1C1E21]",
 									"!cursor-text",
 									"h-11",
@@ -624,7 +624,7 @@ const Inventory = () => {
 												src={result?.image}
 												alt=""
 											/>
-											<span className="text-white font-[Satoshi] text-left text-sm">
+											<span className="text-white font-[Satoshi-Medium] text-left text-sm">
 												{result.name}
 											</span>
 										</div>
@@ -696,7 +696,7 @@ const Inventory = () => {
 														</Badge>
 														<Dropdown
 															classNames={{
-																base: "bg-[#3D1D93] text-white font-[Satoshi]",
+																base: "bg-[#3D1D93] text-white font-[Satoshi-Medium]",
 															}}>
 															<DropdownTrigger>
 																<Button
@@ -730,14 +730,14 @@ const Inventory = () => {
 																input: [
 																	"bg-[#1C1E21]",
 																	"text-white dark:text-white/90",
-																	"font-[Satoshi]",
+																	"font-[Satoshi-Medium]",
 																	"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 																],
 																inputWrapper: [
 																	"data-[hover=true]:border-[#EBD5C4]",
 																	"border-none",
 																	"inner-shadow-input",
-																	"font-[Satoshi]",
+																	"font-[Satoshi-Medium]",
 																	"bg-[#1C1E21]",
 																	"!cursor-text",
 																	"h-11",
@@ -761,7 +761,7 @@ const Inventory = () => {
 																	? true
 																	: false
 															}
-															className="bg-[#3d1d93] font-[Satoshi] text-sm text-white w-auto">
+															className="bg-[#3d1d93] font-[Satoshi-Medium] text-sm text-white w-auto">
 															Update
 														</Button>
 													</div>
@@ -774,14 +774,14 @@ const Inventory = () => {
 																input: [
 																	"bg-[#1C1E21]",
 																	"text-white dark:text-white/90",
-																	"font-[Satoshi]",
+																	"font-[Satoshi-Medium]",
 																	"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 																],
 																inputWrapper: [
 																	"data-[hover=true]:border-[#EBD5C4]",
 																	"border-none",
 																	"inner-shadow-input",
-																	"font-[Satoshi]",
+																	"font-[Satoshi-Medium]",
 																	"bg-[#1C1E21]",
 																	"!cursor-text",
 																	"h-11",
@@ -799,14 +799,14 @@ const Inventory = () => {
 																input: [
 																	"bg-[#1C1E21]",
 																	"text-white dark:text-white/90",
-																	"font-[Satoshi]",
+																	"font-[Satoshi-Medium]",
 																	"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 																],
 																inputWrapper: [
 																	"data-[hover=true]:border-[#EBD5C4]",
 																	"border-none",
 																	"inner-shadow-input",
-																	"font-[Satoshi]",
+																	"font-[Satoshi-Medium]",
 																	"bg-[#1C1E21]",
 																	"!cursor-text",
 																	"h-11",
@@ -828,14 +828,14 @@ const Inventory = () => {
 																		input: [
 																			"bg-[#1C1E21]",
 																			"text-white dark:text-white/90",
-																			"font-[Satoshi]",
+																			"font-[Satoshi-Medium]",
 																			"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 																		],
 																		inputWrapper: [
 																			"data-[hover=true]:border-[#EBD5C4]",
 																			"border-none",
 																			"inner-shadow-input",
-																			"font-[Satoshi]",
+																			"font-[Satoshi-Medium]",
 																			"bg-[#1C1E21]",
 																			"!cursor-text",
 																			"h-11",
@@ -854,14 +854,14 @@ const Inventory = () => {
 																		input: [
 																			"bg-[#1C1E21]",
 																			"text-white dark:text-white/90",
-																			"font-[Satoshi]",
+																			"font-[Satoshi-Medium]",
 																			"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 																		],
 																		inputWrapper: [
 																			"data-[hover=true]:border-[#EBD5C4]",
 																			"border-none",
 																			"inner-shadow-input",
-																			"font-[Satoshi]",
+																			"font-[Satoshi-Medium]",
 																			"bg-[#1C1E21]",
 																			"!cursor-text",
 																			"h-11",
@@ -872,12 +872,12 @@ const Inventory = () => {
 																/>
 															</div>
 															{editSuccess && (
-																<span className="font-[Satoshi] text-green-500 text-medium text-center">
+																<span className="font-[Satoshi-Medium] text-green-500 text-medium text-center">
 																	Updated!
 																</span>
 															)}
 															{editError && (
-																<span className="font-[Satoshi] text-red-500 text-medium text-center">
+																<span className="font-[Satoshi-Medium] text-red-500 text-medium text-center">
 																	Error, try again
 																</span>
 															)}
@@ -892,7 +892,7 @@ const Inventory = () => {
 						)}
 						{searchResultError && (
 							<div className="overflow-hidden mb-[-10px] mt-4 px-3 h-11 w-full rounded-[10px] flex flex-row justify-star items-center gap-3 bg-[#1c1e21] inner-shadow-input">
-								<span className="text-white font-[Satoshi] text-left text-sm">
+								<span className="text-white font-[Satoshi-Medium] text-left text-sm">
 									No results
 								</span>
 							</div>
@@ -945,7 +945,7 @@ const Inventory = () => {
 							</div>
 							<div className="w-full flex flex-col justify-center items-center mt-10 ">
 								{categories.length === 0 ? (
-									<span className="font-[Satoshi] text-white text-2xl text-left">
+									<span className="font-[Satoshi-Medium] text-white text-2xl text-left">
 										Go to New product to create a new category!
 									</span>
 								) : (

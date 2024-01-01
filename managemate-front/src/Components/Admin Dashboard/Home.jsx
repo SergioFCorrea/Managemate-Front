@@ -302,7 +302,7 @@ const Home = () => {
 				<NavbarContent as="div" justify="end">
 					<Dropdown
 						placement="bottom-end"
-						className="bg-[#3D1D93] text-white shadow-[4px_4px_12px_2px_rgba(0,0,0,0.8)] font-[Satoshi]">
+						className="bg-[#3D1D93] text-white shadow-[4px_4px_12px_2px_rgba(0,0,0,0.8)] font-[Satoshi-Medium]">
 						<DropdownTrigger>
 							<Avatar
 								as="button"
@@ -401,7 +401,7 @@ const Home = () => {
 										</span>
 									</>
 								)}
-								<span className="text-sm font-[Satoshi] text-[#C8D9FF] text-center">
+								<span className="text-sm font-[Satoshi-Medium] text-[#C8D9FF] text-center">
 									{errorBestSeller}
 								</span>
 							</div>

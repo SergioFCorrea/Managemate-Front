@@ -192,7 +192,7 @@ const NewProduct = (show) => {
 					classNames={{
 						title: "text-white text-medium",
 					}}
-					className="bg-[#3d1d93] font-[Satoshi] text-sm text-white w-full"
+					className="bg-[#3d1d93] font-[Satoshi-Medium] text-sm text-white w-full"
 					aria-label="New category"
 					title="New category">
 					<Input
@@ -205,13 +205,13 @@ const NewProduct = (show) => {
 							input: [
 								"bg-[#1C1E21]",
 								"text-white dark:text-white/90",
-								"font-[Satoshi]",
+								"font-[Satoshi-Medium]",
 								"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 							],
 							inputWrapper: [
 								"data-[hover=true]:border-[#EBD5C4]",
 								"border-none",
-								"font-[Satoshi]",
+								"font-[Satoshi-Medium]",
 								"bg-[#C8D9FF] backdrop-blur-[8px] bg-opacity-30",
 								"!cursor-text",
 								"h-11",
@@ -228,7 +228,7 @@ const NewProduct = (show) => {
 						variant="bordered"
 						label="Description"
 						classNames={{
-							base: "font-[Satoshi] ",
+							base: "font-[Satoshi-Medium] ",
 							inputWrapper:
 								"bg-[#C8D9FF] backdrop-blur-[8px] bg-opacity-30 border-none",
 							input: "text-white",
@@ -247,12 +247,12 @@ const NewProduct = (show) => {
 							Create
 						</Button>
 						{categorySuccess && (
-							<span className="font-[Satoshi] text-green-500 text-medium text-center">
+							<span className="font-[Satoshi-Medium] text-green-500 text-medium text-center">
 								Category created!
 							</span>
 						)}
 						{categoryError && (
-							<span className="font-[Satoshi] text-red-500 text-medium text-center">
+							<span className="font-[Satoshi-Medium] text-red-500 text-medium text-center">
 								Error creating category
 							</span>
 						)}
@@ -286,7 +286,7 @@ const NewProduct = (show) => {
 												</svg>
 											</button>
 										}>
-										<Avatar className="w-36 h-36 font-[Satoshi] text-xl text-[#3d1d93] bg-white inner-shadow-2" />
+										<Avatar className="w-36 h-36 font-[Satoshi-Medium] text-xl text-[#3d1d93] bg-white inner-shadow-2" />
 									</Badge>
 								) : (
 									<Badge
@@ -319,7 +319,7 @@ const NewProduct = (show) => {
 									<Dropdown
 										isRequired
 										classNames={{
-											base: "bg-[#3D1D93] text-white font-[Satoshi]",
+											base: "bg-[#3D1D93] text-white font-[Satoshi-Medium]",
 										}}>
 										<DropdownTrigger>
 											<Button
@@ -354,14 +354,14 @@ const NewProduct = (show) => {
 											input: [
 												"bg-[#1C1E21]",
 												"text-white dark:text-white/90",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 											],
 											inputWrapper: [
 												"data-[hover=true]:border-[#EBD5C4]",
 												"border-none",
 												"inner-shadow-input",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"bg-[#1C1E21]",
 												"!cursor-text",
 												"h-11",
@@ -383,14 +383,14 @@ const NewProduct = (show) => {
 										input: [
 											"bg-[#1C1E21]",
 											"text-white dark:text-white/90",
-											"font-[Satoshi]",
+											"font-[Satoshi-Medium]",
 											"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 										],
 										inputWrapper: [
 											"data-[hover=true]:border-[#EBD5C4]",
 											"border-none",
 											"inner-shadow-input",
-											"font-[Satoshi]",
+											"font-[Satoshi-Medium]",
 											"bg-[#1C1E21]",
 											"!cursor-text",
 											"h-11",
@@ -407,7 +407,7 @@ const NewProduct = (show) => {
 									variant="bordered"
 									label="Description"
 									classNames={{
-										base: "font-[Satoshi] ",
+										base: "font-[Satoshi-Medium] ",
 										inputWrapper:
 											"bg-[#1C1E21] inner-shadow-input border-none ",
 										input: "text-white",
@@ -425,14 +425,14 @@ const NewProduct = (show) => {
 											input: [
 												"bg-[#1C1E21]",
 												"text-white dark:text-white/90",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 											],
 											inputWrapper: [
 												"data-[hover=true]:border-[#EBD5C4]",
 												"border-none",
 												"inner-shadow-input",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"bg-[#1C1E21]",
 												"!cursor-text",
 												"h-11",
@@ -452,14 +452,14 @@ const NewProduct = (show) => {
 											input: [
 												"bg-[#1C1E21]",
 												"text-white dark:text-white/90",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 											],
 											inputWrapper: [
 												"data-[hover=true]:border-[#EBD5C4]",
 												"border-none",
 												"inner-shadow-input",
-												"font-[Satoshi]",
+												"font-[Satoshi-Medium]",
 												"bg-[#1C1E21]",
 												"!cursor-text",
 												"h-11",
@@ -490,12 +490,12 @@ const NewProduct = (show) => {
 							Create
 						</Button>
 						{productSuccess && (
-							<span className="text-green-500 text-medium text-center font-[Satoshi] mt-[-30px]">
+							<span className="text-green-500 text-medium text-center font-[Satoshi-Medium] mt-[-30px]">
 								Product created successfully!
 							</span>
 						)}
 						{productError && (
-							<span className="text-red-500 text-medium text-center font-[Satoshi] mt-[-30px]">
+							<span className="text-red-500 text-medium text-center font-[Satoshi-Medium] mt-[-30px]">
 								An error occurred
 							</span>
 						)}

@@ -374,7 +374,7 @@ const BoughtTwice = () => {
 				<NavbarContent as="div" justify="end">
 					<Dropdown
 						placement="bottom-end"
-						className="bg-[#3D1D93] text-white shadow-[4px_4px_12px_2px_rgba(0,0,0,0.8)] font-[Satoshi]">
+						className="bg-[#3D1D93] text-white shadow-[4px_4px_12px_2px_rgba(0,0,0,0.8)] font-[Satoshi-Medium]">
 						<DropdownTrigger>
 							<Avatar
 								as="button"
@@ -433,7 +433,7 @@ const BoughtTwice = () => {
 					<div className="flex flex-col md:flex-row justify-center items-center gap-3">
 						<Dropdown
 							classNames={{
-								base: "bg-[#3D1D93] text-white font-[Satoshi]",
+								base: "bg-[#3D1D93] text-white font-[Satoshi-Medium]",
 							}}>
 							<DropdownTrigger>
 								<Button
@@ -463,7 +463,7 @@ const BoughtTwice = () => {
 								</DropdownItem>
 							</DropdownMenu>
 						</Dropdown>
-						{filterError && <span className="font-[Satoshi] text-red-600">No results</span>}
+						{filterError && <span className="font-[Satoshi-Medium] text-red-600">No results</span>}
 					</div>
 					<div className="w-full md:w-1/2 ">
 						<Input
@@ -493,14 +493,14 @@ const BoughtTwice = () => {
 								input: [
 									"bg-[#1C1E21]",
 									"text-white dark:text-white/90",
-									"font-[Satoshi]",
+									"font-[Satoshi-Medium]",
 									"placeholder:text-[#EBD5C4] dark:placeholder:text-white/60",
 								],
 								inputWrapper: [
 									"data-[hover=true]:border-[#EBD5C4]",
 									"border-none",
 									"inner-shadow-input",
-									"font-[Satoshi]",
+									"font-[Satoshi-Medium]",
 									"bg-[#1C1E21]",
 									"!cursor-text",
 									"h-11",
@@ -539,7 +539,7 @@ const BoughtTwice = () => {
 												src={result?.image}
 												alt=""
 											/>
-											<span className="text-white font-[Satoshi] text-left text-sm">
+											<span className="text-white font-[Satoshi-Medium] text-left text-sm">
 												{result.igUsername ||
 													result.name + " " + result.lastName}
 											</span>
@@ -559,7 +559,7 @@ const BoughtTwice = () => {
 						)}
 						{searchResultError && (
 							<div className="overflow-hidden mb-[-10px] mt-4 px-3 h-11 w-full rounded-[10px] flex flex-row justify-star items-center gap-3 bg-[#1c1e21] inner-shadow-input">
-								<span className="text-white font-[Satoshi] text-left text-sm">
+								<span className="text-white font-[Satoshi-Medium] text-left text-sm">
 									No results
 								</span>
 							</div>
@@ -625,7 +625,7 @@ const BoughtTwice = () => {
 													isFooterBlurred
 													radius="lg"
 													className="border-none shadow-[4px_4px_18px_0_rgba(0,0,0,0.6)] flex justify-center items-center">
-													<CardHeader className="bg-[#3d1d93] text-white font-[Satoshi]">
+													<CardHeader className="bg-[#3d1d93] text-white font-[Satoshi-Medium]">
 														{customer.name}
 													</CardHeader>
 													<img
