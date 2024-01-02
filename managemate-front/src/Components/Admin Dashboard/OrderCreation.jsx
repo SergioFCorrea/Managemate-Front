@@ -106,6 +106,8 @@ const OrderCreation = () => {
 
 	// PRODUCT SEARCH
 
+	const [maxProductQuantity, setMaxProductQuantity] = useState(false);
+
 	const getProductsSearch = async () => {
 		try {
 			const modifiedData = productsSearch.includes(" ")
@@ -189,8 +191,10 @@ const OrderCreation = () => {
 
 	// SUBMIT
 
+	const [awaitCreate, setAwaitCreate] = useState(false);
 	const handleSubmit = async () => {
 		try {
+			setAwaitCreate(true);
 			const formCopy = {...formData};
 			const value = selectedProducts.reduce(
 				(total, product) => total + product.salePrice * product.quantity,
@@ -210,15 +214,26 @@ const OrderCreation = () => {
 				value: value,
 			};
 			await axios.post(`https://managemate.onrender.com/order/`, finalForm);
-
+			setAwaitCreate(false);
 			setCreateSuccess(true);
 			setCreateError(false);
+
+			setTimeout(() => {
+				setCreateSuccess(false);
+			}, 3000);
 		} catch (error) {
 			console.log(error.message);
 			setCreateSuccess(false);
 			setCreateError(true);
+			setAwaitCreate(false);
+
+			setTimeout(() => {
+				setCreateError(false);
+			}, 3000);
 		}
 	};
+
+	console.log(selectedClient);
 
 	// --------------------------------------
 
@@ -269,8 +284,10 @@ const OrderCreation = () => {
 													variant="bordered"
 													className="bg-none border-none"
 													isDisabled={searchData.length === 0 && true}
-													onClick={() => {getClientSearch(searchData) 
-													setLoadingClient(true)}}>
+													onClick={() => {
+														getClientSearch(searchData);
+														setLoadingClient(true);
+													}}>
 													<svg
 														className="fill-[#3d1d93]"
 														xmlns="http://www.w3.org/2000/svg"
@@ -324,7 +341,16 @@ const OrderCreation = () => {
 														<div className="flex justify-center items-center w-full md:w-auto mt-1 ">
 															<div className="w-[130px] h-[130px] rounded-[15px] bg-[#3D1D93] flex flex-col justify-center items-center shadow-[2px_0_5px_1px_rgba(0,0,0,0.6)] gap-2">
 																<Checkbox
-																	value={client}
+																	value={{
+																		_id: client._id,
+																		name: client.name,
+																		lastName: client.lastName,
+																		adress: client.adress,
+																		image: client.image,
+																		phoneNumber: client.phoneNumber,
+																		igUsername: client.igUsername,
+																		idNumber: client.idNumber
+																	}}
 																	color="default"
 																	classNames={{
 																		base: "flex flex-col justify-start items-start gap",
@@ -464,12 +490,17 @@ const OrderCreation = () => {
 																(p) => p._id === product._id
 															) && (
 																<input
-																	onChange={(e) =>
+																	onChange={(e) => {
+																		setMaxProductQuantity(
+																			e.target.value > product.quantity
+																				? true
+																				: false
+																		);
 																		handleQuantityChange(
 																			product._id,
 																			e.target.value
-																		)
-																	}
+																		);
+																	}}
 																	name="quantity"
 																	className="font-[Satoshi-Medium] w-8 h-6 rounded-md text-center"
 																	defaultValue={1}
@@ -521,8 +552,15 @@ const OrderCreation = () => {
 									</CheckboxGroup>
 								</div>
 								<div className="bg-[#232529] rounded-b-[20px] w-full h-auto p-2 flex flex-col justify-center items-center gap-3">
-									<p className="font-[Poppins] text-white text-sm font-medium">
+									<p className="font-[Poppins] text-white text-sm font-medium flex flex-col justify-center items-center">
 										Total: {`$${totalOrderValue.toFixed(2)}`}
+										<>
+											{maxProductQuantity && (
+												<span className="font-[Satoshi-Medium] text-red-500 text-center text-sm">
+													Product quantity exceeds available stock
+												</span>
+											)}
+										</>
 									</p>
 									<div className="flex flex-wrap justify-center items-center gap-3 px-2">
 										{selectedProducts?.map((product) => {
@@ -674,19 +712,24 @@ const OrderCreation = () => {
 							</div>
 						</div>
 					</div>
-					<Button
-						isDisabled={
-							selectedClient.length === 0 ||
-							selectedProducts.length === 0 ||
-							paymentStatus === ""
-								? true
-								: false
-						}
-						onClick={handleSubmit}
-						radius="sm"
-						className="bg-[#c8d9ff] font-[Satoshi-Bold] text-lg text-[#3d1d93] w-40 h-12">
-						Create
-					</Button>
+					{awaitCreate ? (
+						<Spinner />
+					) : (
+						<Button
+							isDisabled={
+								maxProductQuantity ||
+								selectedClient.length === 0 ||
+								selectedProducts.length === 0 ||
+								paymentStatus === ""
+									? true
+									: false
+							}
+							onClick={handleSubmit}
+							radius="sm"
+							className="bg-[#c8d9ff] font-[Satoshi-Bold] text-lg text-[#3d1d93] w-40 h-12">
+							Create
+						</Button>
+					)}
 				</div>
 				{createSuccess && (
 					<span className="mt-[-10px] font-[Satoshi-Medium] text-medium text-center text-green-500">

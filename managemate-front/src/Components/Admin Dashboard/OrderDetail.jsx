@@ -290,7 +290,7 @@ const OrderDetail = ({orderId}) => {
 														? "bg-red-700"
 														: order.shippingStatus === "Shipped"
 														? "bg-yellow-500"
-														: order.shippingStatus === "Arrived" ? "bg-green-600" : "bg-white",
+														: order.shippingStatus === "Arrived" ? "bg-green-400" : "bg-white",
 												track: "h-5",
 											}}
 										/>
@@ -346,7 +346,7 @@ const OrderDetail = ({orderId}) => {
 									</div>
 									<button onClick={submitEdit}>
 										<svg
-											className={`${editSuccess === true && "fill-green-500"} ${
+											className={`${editSuccess === true && "fill-green-600"} ${
 												editError === true && "fill-red-500"
 											} ${editSuccess === null && "fill-white"}`}
 											xmlns="http://www.w3.org/2000/svg"

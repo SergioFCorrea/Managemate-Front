@@ -258,7 +258,7 @@ const AccountSettings = () => {
 
 	return (
 		<div className=" flex flex-col justify-center items-center">
-			<Navbar maxWidth="xl" className="md:bg-[#EBD5C4] justify-center flex">
+			<Navbar maxWidth="xl" className="md:bg-[#EBD5C4] justify-center flex overflow-hidden">
 				{/* <NavbarContent className="w- border-2"></NavbarContent> */}
 				<NavbarBrand className="md:hidden">
 					{/* <Link to="/manager">
@@ -271,11 +271,11 @@ const AccountSettings = () => {
 								<path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
 							</svg>
 						</Link> */}
-					<Link to="/">
+					<Link to="/manager">
 						<img src={Logo} alt="" className="w-14 h-auto" />
 					</Link>
 				</NavbarBrand>
-				<Link to="/">
+				<Link to="/manager">
 					<NavbarBrand className="hidden md:flex">
 						{/* <Link to="/manager">
 							<svg
@@ -316,9 +316,6 @@ const AccountSettings = () => {
 						<DropdownMenu aria-label="Profile Actions" variant="shadow">
 							<DropdownItem key="storeManager">
 								<Link to="/manager">Go to store manager</Link>
-							</DropdownItem>
-							<DropdownItem key="help_and_feedback">
-								Help & Feedback
 							</DropdownItem>
 							<DropdownItem key="logout" color="danger">
 								<button

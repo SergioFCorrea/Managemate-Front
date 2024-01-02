@@ -31,12 +31,11 @@ import {
 } from "@nextui-org/react";
 import OrderDetail from "./OrderDetail";
 import {Link, useParams, useNavigate} from "react-router-dom";
-import { logOut } from "./logOut";
+import {logOut} from "./logOut";
 import axios from "axios";
 
 const Orders = () => {
-
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 	// --------------
 	const {id} = useParams();
 	const userImage = localStorage.getItem("userImage");
@@ -84,22 +83,28 @@ const Orders = () => {
 		setSearchData(value);
 	};
 
-	const handleSearch = () => {
-		const result = activeOrders?.filter((order) => order._id === searchData);
-		if (result.length > 0) {
-			setSearchResult(result);
-			setSearchResultError(false);
-		} else {
-			setSearchResult(false);
-			setSearchResultError(true);
-			setTimeout(() => {
+	const handleSearch = async () => {
+		try {
+			const response = await axios.get(
+				`https://managemate.onrender.com/order/search/${id}/${searchData}`
+			);
+			const result = response.data;
+
+			if (result.length > 0) {
+				setSearchResult(result);
 				setSearchResultError(false);
-			}, 3000);
-		}
+			} else {
+				setSearchResult(false);
+				setSearchResultError(true);
+				setTimeout(() => {
+					setSearchResultError(false);
+				}, 3000);
+			}
+		} catch (error) {}
 	};
 
 	const enterSearch = (event) => {
-		if (searchData.length === 0) return;
+		if (searchData.length === 0 || searchData.includes(" ")) return;
 		if (event.key === "Enter") handleSearch();
 	};
 
@@ -191,12 +196,12 @@ const Orders = () => {
 	// --------------------------
 
 	useEffect(() => {
-		const loggedUser = localStorage.getItem("loggedUser")
+		const loggedUser = localStorage.getItem("loggedUser");
 
-		if(!loggedUser){
-			navigate("/login")
+		if (!loggedUser) {
+			navigate("/login");
 		}
-		
+
 		const fetchData = async () => {
 			try {
 				await getStoreInfo();
@@ -372,7 +377,7 @@ const Orders = () => {
 					orders and find specific orders in the order finder.
 				</p>
 
-				<div className="w-[250px] md:w-[680px] lg:w-[1000px] gap-8 h-auto flex flex-col justify-between items-center md:flex-row mt-8 xl:mt-12">
+				<div className="w-[250px] md:w-[680px] lg:w-[1000px] gap-8 h-auto flex flex-col justify-between items-center md:items-start md:flex-row mt-8 xl:mt-12">
 					<Link to={`/dashboard/order-creation/${id}`}>
 						<Button
 							radius="sm"
@@ -390,13 +395,19 @@ const Orders = () => {
 					</Link>
 					<div className="w-full md:w-1/2 ">
 						<Input
+							errorMessage={
+								searchData.includes(" ") && "Spaces are not allowed"
+							}
 							isDisabled={activeOrders.length === 0 ? true : false}
 							value={searchData}
 							endContent={
 								<Button
 									variant="bordered"
 									className="bg-none border-none"
-									isDisabled={searchData.length === 0 && true}
+									isDisabled={
+										searchData.length === 0 ||
+										(searchData.includes(" ") && true)
+									}
 									onClick={handleSearch}>
 									<svg
 										className="fill-[#EBD5C4]"
@@ -583,8 +594,15 @@ const Orders = () => {
 								<p className="font-[Poppins] text-white text-sm text-center">
 									Average order frequency
 								</p>
-								<p className={`font-[Poppins] font-semibold text-[#ebd5c4] ${orderFrequency === null ? "text-2xl h-1/2 flex justify-center items-center" : "text-6xl"}`}>
-									{orderFrequency === null ? "No orders" : orderFrequency + " days" }
+								<p
+									className={`font-[Poppins] font-semibold text-[#ebd5c4] ${
+										orderFrequency === null
+											? "text-2xl h-1/2 flex justify-center items-center"
+											: "text-6xl"
+									}`}>
+									{orderFrequency === null
+										? "No orders"
+										: orderFrequency + " days"}
 								</p>
 							</div>
 							<div className="bg-gradient-to-br flex flex-col justify-center items-center from-[#383C42] to-[#232529] rounded-[20px] w-full h-[180px] shadow-[4px_4px_18px_3px_rgba(0,0,0,0.6)] gap-5">
