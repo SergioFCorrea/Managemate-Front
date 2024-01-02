@@ -1,4 +1,4 @@
-import {Button, Input} from "@nextui-org/react";
+import {Button, Input, Spinner} from "@nextui-org/react";
 import {useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import Logo from "../../Images/managemate-log-dark-mode.png";
@@ -6,7 +6,8 @@ import axios from "axios";
 
 const Login = () => {
 	const navigate = useNavigate();
-	const [loginError, setLoginError] = useState(false);
+	const [loginError, setLoginError] = useState("");
+	const [loading, setLoading] = useState(false);
 	const [login, setLogin] = useState({
 		email: "",
 		password: "",
@@ -22,6 +23,8 @@ const Login = () => {
 	const handleSubmit = async (event) => {
 		try {
 			event.preventDefault();
+
+			setLoading(true);
 
 			const res = await axios.post(
 				"https://managemate.onrender.com/login",
@@ -44,7 +47,6 @@ const Login = () => {
 
 			localStorage.setItem("userIat", userIat);
 			localStorage.setItem("userPassword", userPassword);
-			localStorage.setItem("userStores", userStores);
 			localStorage.setItem("userId", userId);
 			localStorage.setItem("userEmail", userEmail);
 			localStorage.setItem("userImage", userImage);
@@ -52,6 +54,7 @@ const Login = () => {
 
 			navigate("/manager");
 		} catch (error) {
+			setLoading(false);
 			setLoginError(error.response.data.error);
 			console.log(error);
 		}
@@ -122,12 +125,21 @@ const Login = () => {
 							],
 						}}
 					/>
-					<Button
-						type="submit"
-						className="font-[Satoshi-Bold] bg-[#9477E4] w-[40%] h-10 rounded-[5px]">
-						Login
-					</Button>
-					{loginError && (
+					{loading ? (
+						<Spinner />
+					) : (
+						<Button
+							isDisabled={
+								login.email.length === 0 || login.password.length === 0
+									? true
+									: false
+							}
+							type="submit"
+							className="font-[Satoshi-Bold] bg-[#9477E4] w-[40%] h-10 rounded-[5px]">
+							Login
+						</Button>
+					)}
+					{loginError.length > 0 && (
 						<span className="text-red-500 font-[Satoshi-Medium] text-medium">
 							{loginError}
 						</span>

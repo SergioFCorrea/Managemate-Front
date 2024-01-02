@@ -1,4 +1,4 @@
-import {Button, Input} from "@nextui-org/react";
+import {Button, Input, Spinner} from "@nextui-org/react";
 import {Link, useNavigate} from "react-router-dom";
 import Logo from "../../Images/managemate-log-dark-mode.png";
 import {useState, useRef, useEffect} from "react";
@@ -59,6 +59,8 @@ const Register = () => {
 	};
 	// ---------------------------------
 
+	const [loadingRegister, setLoadingRegister] = useState(false);
+
 	const handleSubmit = async (event) => {
 		try {
 			event.preventDefault();
@@ -72,15 +74,44 @@ const Register = () => {
 				image: selectedImage,
 			};
 
-			await axios.post("https://managemate.onrender.com/user", originalFormData);
+			setLoadingRegister(true);
+
+			const registerResponse = await axios.post(
+				"https://managemate.onrender.com/user",
+				originalFormData
+			);
+
+			if (registerResponse.status === 200) setLoadingRegister(false);
+
+			const login = {
+				email: form.email,
+				password: form.password,
+			};
+
+			const res = await axios.post(
+				"https://managemate.onrender.com/login",
+				login
+			);
+
+			const userIat = res.data.iat;
+			const userPassword = res.data.password;
+			const userId = res.data.id;
+			const userEmail = res.data.email;
+			const userImage = res.data.image;
+
+			localStorage.setItem("userIat", userIat);
+			localStorage.setItem("userPassword", userPassword);
+			localStorage.setItem("userId", userId);
+			localStorage.setItem("userEmail", userEmail);
+			localStorage.setItem("userImage", userImage);
+			localStorage.setItem("loggedUser", true);
 
 			setForm({
 				email: "",
 				password: "",
 				confirmPassword: "",
 			});
-
-			navigate("/login");
+			navigate("/manager");
 		} catch (error) {
 			setUsedEmail(error.response.data.error);
 		}
@@ -214,21 +245,25 @@ const Register = () => {
 						htmlFor="image">
 						{!selectedImage ? "Upload your user image" : "The image you chose"}
 					</label>
-					<Button
-						isDisabled={
-							errors.email ||
-							errors.password ||
-							errors.confirmPassword ||
-							form.email === "" ||
-							form.password === "" ||
-							form.confirmPassword === ""
-								? true
-								: false
-						}
-						type="submit"
-						className="font-[Satoshi-Bold] bg-[#9477E4] w-[40%] h-10 rounded-[5px]">
-						Sign Up
-					</Button>
+					{loadingRegister ? (
+						<Spinner />
+					) : (
+						<Button
+							isDisabled={
+								errors.email ||
+								errors.password ||
+								errors.confirmPassword ||
+								form.email === "" ||
+								form.password === "" ||
+								form.confirmPassword === ""
+									? true
+									: false
+							}
+							type="submit"
+							className="font-[Satoshi-Bold] bg-[#9477E4] w-[40%] h-10 rounded-[5px]">
+							Sign Up
+						</Button>
+					)}
 				</form>
 			</div>
 		</div>
