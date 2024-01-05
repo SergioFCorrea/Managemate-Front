@@ -258,7 +258,9 @@ const AccountSettings = () => {
 
 	return (
 		<div className=" flex flex-col justify-center items-center">
-			<Navbar maxWidth="xl" className="md:bg-[#EBD5C4] justify-center flex overflow-hidden">
+			<Navbar
+				maxWidth="xl"
+				className="md:bg-[#EBD5C4] justify-center flex overflow-hidden">
 				{/* <NavbarContent className="w- border-2"></NavbarContent> */}
 				<NavbarBrand className="md:hidden">
 					{/* <Link to="/manager">
@@ -314,8 +316,10 @@ const AccountSettings = () => {
 							/>
 						</DropdownTrigger>
 						<DropdownMenu aria-label="Profile Actions" variant="shadow">
-							<DropdownItem key="storeManager">
-								<Link to="/manager">Go to store manager</Link>
+							<DropdownItem
+								onClick={() => navigate("/manager")}
+								key="storeManager">
+								Go to store manager
 							</DropdownItem>
 							<DropdownItem key="logout" color="danger">
 								<button

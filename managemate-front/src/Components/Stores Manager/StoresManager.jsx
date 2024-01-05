@@ -28,9 +28,20 @@ import {useState, useEffect, useMemo} from "react";
 import {logOut} from "../Admin Dashboard/logOut";
 
 const StoresManager = () => {
-	const navigate = useNavigate();
+	const userIat = localStorage.getItem("userIat");
+	const userId = localStorage.getItem("userId");
+	const userEmail = localStorage.getItem("userEmail");
+	const userImage = localStorage.getItem("userImage");
+	const redirect = useNavigate();
+	const navigate = useNavigate()
 
 	// ------------------
+
+	// NAVIGATE USER
+	const navigateUser = (prop) => {
+		navigate(`${prop}${userId}`)
+	}
+	// -------------------
 	const {isOpen, onOpen, onOpenChange} = useDisclosure();
 	const [loading, setLoading] = useState(true);
 
@@ -101,10 +112,7 @@ const StoresManager = () => {
 		setNoFilterResults(false);
 	};
 	// ----------------
-	const userIat = localStorage.getItem("userIat");
-	const userId = localStorage.getItem("userId");
-	const userEmail = localStorage.getItem("userEmail");
-	const userImage = localStorage.getItem("userImage");
+
 
 	const getUserStores = async () => {
 		try {
@@ -125,7 +133,7 @@ const StoresManager = () => {
 		const loggedUser = localStorage.getItem("loggedUser");
 
 		if (!loggedUser) {
-			navigate("/login");
+			redirect("/login");
 		}
 
 		const fetchData = async () => {
@@ -179,8 +187,10 @@ const StoresManager = () => {
 							/>
 						</DropdownTrigger>
 						<DropdownMenu aria-label="Profile Actions" variant="shadow">
-							<DropdownItem key="settings">
-								<Link to={`/manager/account/${userId}`}>Settings</Link>
+							<DropdownItem onClick={()=>navigateUser("/manager/account/")} key="/manager/account/">
+								{/* <Link to={`/manager/account/${userId}`}> */}
+									Settings
+									{/* </Link> */}
 							</DropdownItem>
 							<DropdownItem key="logout" color="danger">
 								<button
