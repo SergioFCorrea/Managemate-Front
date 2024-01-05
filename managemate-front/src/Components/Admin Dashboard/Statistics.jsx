@@ -132,7 +132,7 @@ const Statistics = () => {
 				`https://managemate.onrender.com/client/most-by-month/${id}/${month}`
 			);
 			const result = response.data;
-			
+
 			setCustomerMostPurch(result);
 		} catch (error) {
 			setMostPurchError(true);
@@ -168,7 +168,6 @@ const Statistics = () => {
 			);
 			const result = respone.data;
 
-
 			setCustomersBoughtTwice(result);
 		} catch (error) {
 			setCustomerBought2Error(true);
@@ -177,23 +176,25 @@ const Statistics = () => {
 
 	// -----------------
 
-	const [loadinMonth, setLoadingMonth] = useState(null)
+	const [loadinMonth, setLoadingMonth] = useState(null);
 
 	// SELECT INFO PER MONTH
 
 	const setInfoPerMonth = async (month) => {
 		try {
-			const newPerMonth = await axios.get(`https://managemate.onrender.com/client/new-by-month/${id}/${month}`)
-			const newResult = newPerMonth.data.length
+			const newPerMonth = await axios.get(
+				`https://managemate.onrender.com/client/new-by-month/${id}/${month}`
+			);
+			const newResult = newPerMonth.data.length;
 
-			setNewCustomers(newResult)
+			setNewCustomers(newResult);
 			// -----------------------
 			await getCustomersBoughtTwice(month);
 
 			// -------------------
 			await getCustomerMostPurch(month);
 
-			setLoadingMonth(null)
+			setLoadingMonth(null);
 		} catch (error) {}
 	};
 	// ----------------------------------
@@ -377,12 +378,15 @@ const Statistics = () => {
 							/>
 						</DropdownTrigger>
 						<DropdownMenu aria-label="Profile Actions" variant="shadow">
-							<DropdownItem key="settings">
-								<Link to={`/manager/account/${userId}`}>Settings</Link>
+							<DropdownItem
+								onClick={() => navigate(`/manager/account/${userId}`)}
+								key="settings">
+								Settings
 							</DropdownItem>
-							<DropdownItem key="system">
-								<Link to="/manager">Go to store manager</Link>
+							<DropdownItem onClick={() => navigate("/manager")} key="system">
+								Go to store manager
 							</DropdownItem>
+
 							<DropdownItem key="logout" color="danger">
 								<button
 									onClick={() => {
@@ -646,7 +650,9 @@ const Statistics = () => {
 						</div>
 						<div className="w-full flex flex-col md:flex-row justify-center items-center gap-8 mb-8">
 							{loadinMonth === true ? (
-								<div className="h-[250px] w-full lg:w-[500px] flex justify-center items-center"><Spinner color="success" /></div>	
+								<div className="h-[250px] w-full lg:w-[500px] flex justify-center items-center">
+									<Spinner color="success" />
+								</div>
 							) : (
 								<>
 									<div className="w-full lg:w-[250px] h-[250px] rounded-[25px] bg-[#3D1D93] flex flex-col justify-center items-center shadow-[4px_4px_18px_3px_rgba(0,0,0,0.6)] gap-4 ">

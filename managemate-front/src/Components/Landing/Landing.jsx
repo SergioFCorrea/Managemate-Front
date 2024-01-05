@@ -71,12 +71,12 @@ const Landing = () => {
 					<img src={logo} alt="" loading="lazy" />
 				</NavbarBrand>
 			</Navbar>
-			<div className="relative w-full h-[100vh] flex justify-center md:flex md:justify-center md:items-center">
+			<div className="bg-[#232529] relative w-full h-[100vh] flex justify-center md:flex md:justify-center md:items-center">
 				<img
 					loading="lazy"
 					src="https://res.cloudinary.com/dxyosebut/image/upload/v1704063679/LANDING/behance-63adee33ddf03_g5ett9.jpg"
 					alt=""
-					className="bg-cover bg-center opacity-50 absolute  w-[150vw] h-full mix-blend-multiply"
+					className="hidden md:flex bg-cover bg-center opacity-50 absolute  w-[150vw] h-full mix-blend-multiply"
 				/>
 				<div className="w-[85vw] flex justify-center items-center flex-col relative gap-y-12 md:w-[46%] 2xl:w-[40%]  2xl:mb-16 2xl:gap-y-36">
 					<h1 className="text-5xl font-[Poppins] font-bold text-[#E0BEA4] leading-[60px] md:text-left 2xl:text-7xl 2xl:w-[12ch]">

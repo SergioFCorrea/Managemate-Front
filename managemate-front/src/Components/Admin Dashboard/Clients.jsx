@@ -331,12 +331,15 @@ const Clients = () => {
 							/>
 						</DropdownTrigger>
 						<DropdownMenu aria-label="Profile Actions" variant="shadow">
-							<DropdownItem key="settings">
-								<Link to={`/manager/account/${userId}`}>Settings</Link>
+							<DropdownItem
+								onClick={() => navigate(`/manager/account/${userId}`)}
+								key="settings">
+								Settings
 							</DropdownItem>
-							<DropdownItem key="system">
-								<Link to="/manager">Go to store manager</Link>
+							<DropdownItem onClick={() => navigate("/manager")} key="system">
+								Go to store manager
 							</DropdownItem>
+
 							<DropdownItem key="logout" color="danger">
 								<button
 									onClick={() => {
