@@ -173,29 +173,43 @@ const OrderDetail = ({orderId}) => {
 										}, 0)}
 									</p>
 								</div>
-								<div className=" md:pr-5 md:pl-5">
+								<div className=" w-full md:h-full">
 									<ScrollShadow
 										size="20"
 										orientation="vertical"
-										className="overflow-y-scroll  hide-scrollbar w-full h-28">
-										<div className=" flex flex-col justify-center items-center gap-4 w-full md:flex-wrap md:flex-row">
+										className="overflow-y-scroll  hide-scrollbar w-full h-36 py-2">
+										<div
+											
+											className=" flex flex-col justify-center items-center gap-4 md:h-full w-full md:flex-wrap md:flex-row">
 											{order?.products?.map((product) => {
 												return (
-													<div
-														key={product._id}
-														className="w-28 h-28 flex flex-col justify-center items-center bg-[#C8D9FF] backdrop-blur-[18px] bg-opacity-30 rounded-md gap-2">
-														<p className="font-[Poppins] text-white text-[12px]">
-															{product.name}
-														</p>
-														<img
-															src={product.image}
-															alt=""
-															className="w-14 h-14 object-cover rounded-sm"
-														/>
-														<p className="font-[Poppins] text-white text-[9px]">
-															${product.salePrice}
-														</p>
-													</div>
+													<Badge
+														disableOutline
+														content={product.quantity}
+														className="bg-white/70 backdrop-blur-sm text-[#3d1d93] font-medium"
+														
+														>
+														<div
+															key={product._id}
+															className="w-28 h-28 flex flex-col justify-center items-center bg-[#C8D9FF] backdrop-blur-[18px] bg-opacity-30 rounded-md gap-2">
+															<p
+																className={`font-[Poppins] text-white ${
+																	product.name.length > 10
+																		? "text-[10px]"
+																		: "text-[12px]"
+																} text-center`}>
+																{product.name}
+															</p>
+															<img
+																src={product.image}
+																alt=""
+																className="w-14 h-14 object-cover rounded-sm"
+															/>
+															<p className="font-[Poppins] text-white text-[9px]">
+																${product.salePrice}
+															</p>
+														</div>
+													</Badge>
 												);
 											})}
 										</div>
@@ -290,7 +304,9 @@ const OrderDetail = ({orderId}) => {
 														? "bg-red-700"
 														: order.shippingStatus === "Shipped"
 														? "bg-yellow-500"
-														: order.shippingStatus === "Arrived" ? "bg-green-400" : "bg-white",
+														: order.shippingStatus === "Arrived"
+														? "bg-green-400"
+														: "bg-white",
 												track: "h-5",
 											}}
 										/>
@@ -418,7 +434,10 @@ const OrderDetail = ({orderId}) => {
 												onClick={() => {
 													setNewPaymentStatus("Pending");
 												}}
-												className={`${newPaymentStatus === "Pending" && "border-2 border-white/90"}hover:scale-[103%] transform transition-transform bg-gradient-to-br from-[#9477E4] to-[#3d1d93] backdrop-blur-[18px] bg-opacity-100 w-[130px] md:w-[95px] md:h-[80px] h-[70px] flex flex-col md:flex-row justify-center items-center rounded-medium shadow-[2px_2px_8px_2px_rgba(0,0,0,0.2)]`}>
+												className={`${
+													newPaymentStatus === "Pending" &&
+													"border-2 border-white/90"
+												}hover:scale-[103%] transform transition-transform bg-gradient-to-br from-[#9477E4] to-[#3d1d93] backdrop-blur-[18px] bg-opacity-100 w-[130px] md:w-[95px] md:h-[80px] h-[70px] flex flex-col md:flex-row justify-center items-center rounded-medium shadow-[2px_2px_8px_2px_rgba(0,0,0,0.2)]`}>
 												<span className="font-[Poppins] text-white text-center text-[12px]">
 													Pending
 												</span>
@@ -427,7 +446,10 @@ const OrderDetail = ({orderId}) => {
 												onClick={() => {
 													setNewPaymentStatus("Pre-order");
 												}}
-												className={`${newPaymentStatus === "Pre-order" && "border-2 border-white/90"}hover:scale-[103%] transform transition-transform bg-gradient-to-br from-[#9477E4] to-[#3d1d93] backdrop-blur-[18px] bg-opacity-100 w-[130px] md:w-[95px] md:h-[80px] h-[70px] flex flex-col md:flex-row justify-center items-center rounded-medium shadow-[2px_2px_8px_2px_rgba(0,0,0,0.2)]`}>
+												className={`${
+													newPaymentStatus === "Pre-order" &&
+													"border-2 border-white/90"
+												}hover:scale-[103%] transform transition-transform bg-gradient-to-br from-[#9477E4] to-[#3d1d93] backdrop-blur-[18px] bg-opacity-100 w-[130px] md:w-[95px] md:h-[80px] h-[70px] flex flex-col md:flex-row justify-center items-center rounded-medium shadow-[2px_2px_8px_2px_rgba(0,0,0,0.2)]`}>
 												<span className="font-[Poppins] text-white text-center text-[12px]">
 													Pre-order
 												</span>
@@ -436,7 +458,10 @@ const OrderDetail = ({orderId}) => {
 												onClick={() => {
 													setNewPaymentStatus("Paid");
 												}}
-												className={`${newPaymentStatus === "Paid" && "border-2 border-white/90"}hover:scale-[103%] transform transition-transform bg-gradient-to-br from-[#9477E4] to-[#3d1d93] backdrop-blur-[18px] bg-opacity-100 w-[130px] md:w-[95px] md:h-[80px] h-[70px] flex flex-col md:flex-row justify-center items-center rounded-medium shadow-[2px_2px_8px_2px_rgba(0,0,0,0.2)]`}>
+												className={`${
+													newPaymentStatus === "Paid" &&
+													"border-2 border-white/90"
+												}hover:scale-[103%] transform transition-transform bg-gradient-to-br from-[#9477E4] to-[#3d1d93] backdrop-blur-[18px] bg-opacity-100 w-[130px] md:w-[95px] md:h-[80px] h-[70px] flex flex-col md:flex-row justify-center items-center rounded-medium shadow-[2px_2px_8px_2px_rgba(0,0,0,0.2)]`}>
 												<span className="font-[Poppins] text-white text-center text-[12px]">
 													Paid
 												</span>
@@ -445,7 +470,10 @@ const OrderDetail = ({orderId}) => {
 												onClick={() => {
 													setNewPaymentStatus("Canceled");
 												}}
-												className={`${newPaymentStatus === "Canceled" && "border-2 border-white/90"}hover:scale-[103%] transform transition-transform bg-gradient-to-br from-[#9477E4] to-[#3d1d93] backdrop-blur-[18px] bg-opacity-100 w-[130px] md:w-[95px] md:h-[80px] h-[70px] flex flex-col md:flex-row justify-center items-center rounded-medium shadow-[2px_2px_8px_2px_rgba(0,0,0,0.2)]`}>
+												className={`${
+													newPaymentStatus === "Canceled" &&
+													"border-2 border-white/90"
+												}hover:scale-[103%] transform transition-transform bg-gradient-to-br from-[#9477E4] to-[#3d1d93] backdrop-blur-[18px] bg-opacity-100 w-[130px] md:w-[95px] md:h-[80px] h-[70px] flex flex-col md:flex-row justify-center items-center rounded-medium shadow-[2px_2px_8px_2px_rgba(0,0,0,0.2)]`}>
 												<span className="font-[Poppins] text-white text-center text-[12px]">
 													Canceled
 												</span>

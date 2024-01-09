@@ -666,7 +666,7 @@ const ClientDetail = ({clientId}) => {
 				</div>
 			)}
 			{!loading && (
-				<div className="flex-col flex gap-5 md:px-5 justify-center items-center w-full">
+				<div className="flex-col flex gap-5 md:px-5 justify-center items-center w-full ">
 					<p className="text-white font-[Satoshi-Medium] text-xl  mt-8">Orders</p>
 					{clientInfo?.orders?.length > 0 ? (
 						<Table
@@ -694,7 +694,7 @@ const ClientDetail = ({clientId}) => {
 								th: "bg-[#C8D9FF] backdrop-blur-[18px] bg-opacity-30 text-white text-[8.3px] md:text-[12px] xl:text-[15px]",
 								tr: " hover:text-[#ebd9c4] ",
 								wrapper:
-									"shadow-[2px_2px_8px_3px_rgba(0,0,0,0.4)] min-h-[222px] w-[300px] ml-1  md:ml-0 md:h-[305px] md:w-full  bg-[#3d1d93] text-[#EBF1FF] font-[Poppins] p-2 md:p-3 flex flex-col justify-between items-center overflow-hidden",
+									"shadow-[2px_2px_8px_3px_rgba(0,0,0,0.4)] min-h-[222px] w-[96%] ml-1  md:ml-0 md:h-[305px] md:w-full  bg-[#3d1d93] text-[#EBF1FF] font-[Poppins] p-2 md:p-3 flex flex-col justify-center items-center overflow-hidden",
 								td: "text-[8px] md:text-[12px] xl:text-[13px] font-medium",
 							}}>
 							<TableHeader>

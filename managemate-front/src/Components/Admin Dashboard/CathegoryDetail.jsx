@@ -66,11 +66,12 @@ const CathegoryDetail = () => {
 
 			setCategory(result[0]);
 			setProducts(result[0].products);
+			console.log('Peticion realizada');
 		} catch (error) {
 			console.log(error);
 		}
 	};
-	// console.log(category);
+	
 	// -----------------------------------------------
 
 	// SEARCH PRODUCTS
@@ -167,6 +168,8 @@ const CathegoryDetail = () => {
 		salePrice: "",
 		quantity: 0,
 	});
+
+	console.log(editForm);
 
 	const editChange = (event) => {
 		const name = event.target.name;
@@ -524,7 +527,7 @@ const CathegoryDetail = () => {
 							{category?.name}
 						</Badge>
 						<Modal
-							onClose={getCategoryInfo}
+							onClose={()=>getCategoryInfo()}
 							isOpen={isOpenModal3}
 							onOpenChange={onOpenChangeModal3}
 							className="bg-[#232529]">
@@ -769,6 +772,7 @@ const CathegoryDetail = () => {
 										onOpenChange={onOpenChangeModal2}
 										onClose={() => {
 											setEdit(false);
+											getCategoryInfo()
 										}}>
 										<ModalContent>
 											<ModalHeader className="flex justify-between items-center">
@@ -1097,6 +1101,7 @@ const CathegoryDetail = () => {
 							onOpenChange={onOpenChangeModal1}
 							onClose={() => {
 								setEdit(false);
+								getCategoryInfo()
 							}}>
 							<ModalContent>
 								<ModalHeader className="flex justify-between items-center">

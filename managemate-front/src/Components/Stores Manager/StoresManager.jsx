@@ -124,6 +124,7 @@ const StoresManager = () => {
 
 			setStores(result);
 			setStoresCopy(result);
+			
 		} catch (error) {
 			setErrorGettingStores(true);
 		}
@@ -294,7 +295,7 @@ const StoresManager = () => {
 				<Spinner color="success" />
 			) : (
 				<div
-					className={`w-[85vw] md:w-[80vw] 2xl:w-[57vw] flex flex-col justify-center items-center gap-8 ${
+					className={`w-[85vw] md:w-[80vw] 2xl:w-[57vw] flex flex-col pb-20 justify-center items-center gap-8 ${
 						noFilterResults === true ? "mt-10" : "mt-20"
 					} ${stores.length > 0}lg:grid lg:grid-cols-2`}>
 					{noFilterResults === true && (
@@ -306,7 +307,7 @@ const StoresManager = () => {
 						stores?.map((store) => {
 							return (
 								<Link to={`/dashboard/home/${store._id}`}>
-									<div
+									<div key={store._id}
 										className={`w-[270px] h-[500px] p-y-8 bg-gradient-to-bl ${
 											store.state === true
 												? "from-[#F5E9E1] to-[#EBD5C4]"

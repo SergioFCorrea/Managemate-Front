@@ -144,7 +144,7 @@ function ProductDetail({productId}) {
 						<p className="font-[Poppins] text-white text-medium md:text-sm text-center">
 							Purchase Price
 						</p>
-						<p className="font-[Satoshi-Bold] text-[#ebd5c4] text-5xl md:text-4xl text-center">
+						<p className={`font-[Satoshi-Bold] text-[#ebd5c4] ${product[0]?.purchasePrice.toString().length >= 4 ? "text-[28px] md:text-[21px]" : "text-5xl"} text-center`}>
 							${product[0]?.purchasePrice}
 						</p>
 					</div>
@@ -152,7 +152,7 @@ function ProductDetail({productId}) {
 						<p className="font-[Poppins] text-white text-medium md:text-sm text-center">
 							Sale Price
 						</p>
-						<p className="font-[Satoshi-Bold] text-[#ebd5c4] text-5xl md:text-4xl text-center">
+						<p className={`font-[Satoshi-Bold] text-[#ebd5c4] ${product[0]?.salePrice.toString().length >= 4 ? "text-[28px] md:text-[21px]" : "text-5xl"}  text-center`}>
 							${product[0]?.salePrice}
 						</p>
 					</div>
@@ -169,7 +169,7 @@ function ProductDetail({productId}) {
 						<p className="font-[Poppins] text-black text-medium md:text-sm text-center">
 							Profit per product
 						</p>
-						<p className="font-[Satoshi-Bold] text-[#232529] text-5xl md:text-4xl text-center">
+						<p className={`font-[Satoshi-Bold] text-[#232529] ${profit.toString().length >= 4 ? "text-[28px] md:text-[21px]" :"text-5xl"} text-center`}>
 							${profit}
 						</p>
 					</div>
