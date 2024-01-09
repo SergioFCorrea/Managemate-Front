@@ -84,6 +84,7 @@ const OrderCreation = () => {
 		setSelectedProducts(updatedSelectedProducts);
 	};
 
+
 	// ---------------------------
 
 	// FORM
@@ -107,6 +108,8 @@ const OrderCreation = () => {
 	// PRODUCT SEARCH
 
 	const [maxProductQuantity, setMaxProductQuantity] = useState(false);
+	const [noStock, setNoStock] = useState(false);
+	const [negativeQuantity, setNegativeQuantity] = useState(false);
 
 	const getProductsSearch = async () => {
 		try {
@@ -124,6 +127,7 @@ const OrderCreation = () => {
 		} catch (error) {
 			console.log(error);
 			setProductsSearchError(true);
+			setLoading(false)
 		}
 	};
 
@@ -140,9 +144,16 @@ const OrderCreation = () => {
 		}
 	};
 
-	const resetProductSearch = () => {
-		setProductsSearch([]);
-		setProductsSearch("");
+	const repeatedProduct = (param) => {
+
+		const findeProduct = selectedProducts.find(
+			(product) => product._id === param
+		);
+
+		if (findeProduct) {
+			const remove = selectedProducts.filter((p) => p._id !== param);
+			setSelectedProducts(remove);
+		}
 	};
 
 	// -----------------------------------
@@ -183,10 +194,6 @@ const OrderCreation = () => {
 		}
 	};
 
-	const resetSearch = () => {
-		setSearchResult([]);
-		setSearchData("");
-	};
 	// -----------------------------------
 
 	// SUBMIT
@@ -232,8 +239,6 @@ const OrderCreation = () => {
 			}, 3000);
 		}
 	};
-
-	console.log(selectedClient);
 
 	// --------------------------------------
 
@@ -349,7 +354,7 @@ const OrderCreation = () => {
 																		image: client.image,
 																		phoneNumber: client.phoneNumber,
 																		igUsername: client.igUsername,
-																		idNumber: client.idNumber
+																		idNumber: client.idNumber,
 																	}}
 																	color="default"
 																	classNames={{
@@ -496,6 +501,9 @@ const OrderCreation = () => {
 																				? true
 																				: false
 																		);
+																		setNegativeQuantity(
+																			e.target.value <= 0 ? true : false
+																		);
 																		handleQuantityChange(
 																			product._id,
 																			e.target.value
@@ -520,8 +528,15 @@ const OrderCreation = () => {
 																			selectedProducts.find(
 																				(p) => p._id === product._id
 																			)?.quantity || 1,
+																		stock: product.quantity,
 																	}}
 																	color="default"
+																	onClick={() => {
+																		product.quantity === 0
+																			? setNoStock(true)
+																			: setNoStock(false);
+																		repeatedProduct(product._id);
+																	}}
 																	classNames={{
 																		base: "flex flex-col justify-start items-start gap",
 																		wrapper: "data-selected:bg-[#9477E4]",
@@ -554,13 +569,23 @@ const OrderCreation = () => {
 								<div className="bg-[#232529] rounded-b-[20px] w-full h-auto p-2 flex flex-col justify-center items-center gap-3">
 									<p className="font-[Poppins] text-white text-sm font-medium flex flex-col justify-center items-center">
 										Total: {`$${totalOrderValue.toFixed(2)}`}
-										<>
+										<div className="flex flex-col justify-center items-center gap-2">
 											{maxProductQuantity && (
 												<span className="font-[Satoshi-Medium] text-red-500 text-center text-sm">
 													Product quantity exceeds available stock
 												</span>
 											)}
-										</>
+											{noStock && (
+												<span className="font-[Satoshi-Medium] text-red-500 text-center text-sm">
+													No stock for this product
+												</span>
+											)}
+											{negativeQuantity && (
+												<span className="font-[Satoshi-Medium] text-red-500 text-center text-sm">
+													Product quantity can't be 0 or less than 0
+												</span>
+											)}
+										</div>
 									</p>
 									<div className="flex flex-wrap justify-center items-center gap-3 px-2">
 										{selectedProducts?.map((product) => {
@@ -570,7 +595,12 @@ const OrderCreation = () => {
 													classNames={{
 														badge: "w-5 h-5",
 													}}
-													onClick={() => removeSelectedProduct(product._id)}
+													onClick={() => {
+														removeSelectedProduct(product._id);
+														setMaxProductQuantity(false);
+														setNegativeQuantity(false);
+														setNoStock(false);
+													}}
 													content={
 														<svg
 															className="w-5"
@@ -717,6 +747,8 @@ const OrderCreation = () => {
 					) : (
 						<Button
 							isDisabled={
+								noStock ||
+								negativeQuantity ||
 								maxProductQuantity ||
 								selectedClient.length === 0 ||
 								selectedProducts.length === 0 ||

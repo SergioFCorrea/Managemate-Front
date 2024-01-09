@@ -129,11 +129,16 @@ const Home = () => {
 
 			const result = response.data;
 
-			setAverageOrder(result);
+			const roundedResult = Math.round(result)
+			
+
+			setAverageOrder(roundedResult);
 		} catch (error) {
 			setErrorAverage(error.response.data.error);
 		}
 	};
+
+	
 	/////////////////////////////////////////////
 
 	const getSalesPercentage = async () => {
@@ -411,12 +416,21 @@ const Home = () => {
 								<p className="font-[Poppins] font-medium text-xl text-white text-center md:text-lg md:w-[15ch]">
 									Average order price
 								</p>
-								<p
-									className={`font-[Poppins] font-medium ${
-										errorAverage ? "text-4xl" : "text-6xl"
-									} text-[#EBD5C4]`}>
-									{errorAverage ? errorAverage : "$" + Math.round(averageOrder)}
-								</p>
+								{errorAverage ? (
+									<p
+										className={`font-[Poppins] font-medium text-6xl text-[#EBD5C4]`}>
+										{errorAverage}
+									</p>
+								) : (
+									<p
+										className={`font-[Poppins] font-medium ${
+											averageOrder.toString().length >= 4
+												? "text-3xl"
+												: "text-6xl"
+										} text-[#EBD5C4]`}>
+										{`$${Math.round(averageOrder)}`}
+									</p>
+								)}
 							</div>
 							<div className="w-full h-[300px] md:h-[230px] rounded-[30px] bg-gradient-to-br from-black to-[#383C42] flex flex-col justify-center items-center shadow-[4px_4px_18px_3px_rgba(0,0,0,0.6)] gap-8 md:gap-6 mb-8 md:mb-0">
 								<p className="font-[Poppins] font-medium text-[#C8D9FF] text-[15px] w-[20ch] md:w-auto text-center mt-8 md:mt-0">

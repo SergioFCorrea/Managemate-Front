@@ -612,7 +612,7 @@ const Orders = () => {
 								<p className="font-[Poppins] text-white text-sm text-center w-[25ch]">
 									Average number of products per order
 								</p>
-								<p className="font-[Poppins] font-semibold text-[#ebd5c4] text-7xl">
+								<p className={`font-[Poppins] font-semibold text-[#ebd5c4] ${productQuantity.toString().length >= 3 ? "text-4xl" :"text-7xl"}`}>
 									{productQuantity || 0}
 								</p>
 							</div>
