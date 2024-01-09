@@ -583,8 +583,8 @@ const Clients = () => {
 												twiceTotalError ? "text-2xl" : "text-8xl"
 											} ${
 												twiceTotalError &&
-												"h-3/4 flex justify-center items-center"
-											} md:text-6xl font-[Poppins] font-semibold xl:text-8xl`}>
+												"h-[60%] flex justify-center items-center"
+											} md:text-6xl font-[Poppins] font-semibold text-center`}>
 											{twiceTotalError
 												? "No clients"
 												: clientsBoughtTwiceTotal.length}

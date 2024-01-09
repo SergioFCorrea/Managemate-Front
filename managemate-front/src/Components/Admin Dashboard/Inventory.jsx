@@ -956,7 +956,7 @@ const Inventory = () => {
 										Categories
 									</p>
 								)}
-								<div className="w-full flex flex-col justify-start items-center md:flex-wrap md:flex-row gap-6 md:justify-center lg:justify-start lg:gap-6 mt-16">
+								<div className="w-full flex flex-col justify-start items-center md:flex-wrap md:flex-row gap-6 md:justify-start lg:gap-6 mt-16">
 									{categories?.slice(0, 6).map((category) => {
 										return (
 											<Badge

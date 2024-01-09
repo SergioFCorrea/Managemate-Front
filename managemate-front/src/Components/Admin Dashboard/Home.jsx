@@ -361,7 +361,7 @@ const Home = () => {
 								<p className="font-[Poppins] font-semibold text-[#C8D9FF] text-3xl">
 									{errorRevenue === true ? 0 : totalRevenue}
 								</p>
-								<p className="font-[Questrial] text-white text-medium">
+								<p className="font-[Questrial] text-white text-medium md:text-sm lg:text-medium text-center">
 									Total revenue
 								</p>
 							</div>
@@ -370,14 +370,14 @@ const Home = () => {
 								<p className="font-[Poppins] font-semibold text-[#C8D9FF] text-3xl">
 									{salesNumber}
 								</p>
-								<p className="font-[Questrial] text-white text-medium">Sales</p>
+								<p className="font-[Questrial] text-white text-medium md:text-sm lg:text-medium">Sales</p>
 							</div>
 							<hr className="h-2 w-40 md:w-20 md:rotate-90" />
 							<div className="w-[120px] h-48 flex flex-col justify-center items-center">
 								<p className="font-[Poppins] font-semibold text-[#C8D9FF] text-3xl">
 									{storeInfo?.clients?.length}
 								</p>
-								<p className="font-[Questrial] text-white text-medium">
+								<p className="font-[Questrial] text-white text-medium md:text-sm lg:text-medium text-center">
 									Total customers
 								</p>
 							</div>
@@ -386,7 +386,7 @@ const Home = () => {
 								<p className="font-[Poppins] font-semibold text-[#C8D9FF] text-3xl">
 									{canceledOrders}
 								</p>
-								<p className="font-[Questrial] text-white text-medium">
+								<p className="font-[Questrial] text-white text-medium md:text-sm lg:text-medium text-center">
 									Canceled orders
 								</p>
 							</div>
@@ -418,7 +418,7 @@ const Home = () => {
 								</p>
 								{errorAverage ? (
 									<p
-										className={`font-[Poppins] font-medium text-6xl text-[#EBD5C4]`}>
+										className={`font-[Poppins] font-medium text-3xl text-[#EBD5C4]`}>
 										{errorAverage}
 									</p>
 								) : (
